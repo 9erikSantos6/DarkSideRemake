@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://du4i5vhayeuo3"]
+
+[node name="Main" type="Node2D"]
+
+[node name="GameplayLayer" type="Node2D" parent="."]
+
+[node name="UIScream" type="Node2D" parent="."]
+
+[node name="DialogBox" type="Node2D" parent="UIScream"]
+
+[node name="HUD" type="Node2D" parent="UIScream"]
+
+[node name="MainMenu" type="Node2D" parent="UIScream"]
+
+[node name="Node2D" type="Node2D" parent="UIScream"]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://72qfu2u24lq"]
+
+[ext_resource type="Texture2D" uid="uid://c02wq1vcg02x8" path="res://Assets/Backgrounds/parallax/desert/desert_sky.png" id="1_oxmew"]
+[ext_resource type="Texture2D" uid="uid://bm1t31tgsaf2v" path="res://Assets/Backgrounds/parallax/desert/desert_cloud.png" id="2_r6df2"]
+[ext_resource type="Texture2D" uid="uid://cgu45uthishsu" path="res://Assets/Backgrounds/parallax/desert/desert_moon.png" id="3_lj7tg"]
+[ext_resource type="Texture2D" uid="uid://b7gfr7bkyatex" path="res://Assets/Backgrounds/parallax/desert/desert_mountain.png" id="4_ch8o3"]
+[ext_resource type="Texture2D" uid="uid://b7y4q3o4gngyn" path="res://Assets/Backgrounds/parallax/desert/desert_dunemid.png" id="5_0yko3"]
+[ext_resource type="Texture2D" uid="uid://bl4boxcusssuw" path="res://Assets/Backgrounds/parallax/desert/desert_dunefrontt.png" id="6_66s51"]
+
+[node name="DesertParallax" type="Node2D"]
+
+[node name="desert_sky" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="desert_sky"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_oxmew")
+
+[node name="desert_moon" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-2, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="desert_moon"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_lj7tg")
+expand_mode = 1
+
+[node name="desert_cloud" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="desert_cloud"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_r6df2")
+
+[node name="desert_mountain" type="Parallax2D" parent="."]
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="desert_mountain"]
+offset_right = 3800.0
+offset_bottom = 1080.0
+texture = ExtResource("4_ch8o3")
+expand_mode = 1
+
+[node name="desert_dunemid" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-400, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="desert_dunemid"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_0yko3")
+
+[node name="desert_dunefrontt" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-1500, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="desert_dunefrontt"]
+offset_right = 3800.0
+offset_bottom = 1080.0
+texture = ExtResource("6_66s51")

@@ -4,18 +4,18 @@ extends Area2D
 @export var min_speed: float = 255.0
 var speed
 
-var alive = false 
+var alive = false
 var sprites
 var screen_size = Global.screen_size
 
-var sound_fx 
+var sound_fx
 
 func _ready():
 	#randomize() # inicia o randomize
 	sprites = [
-		$sprite_enemy1, 
-		$sprite_enemy2, 
-		$sprite_enemy3, 
+		$sprite_enemy1,
+		$sprite_enemy2,
+		$sprite_enemy3,
 		$sprite_enemy4
 	]
 	spawn()
@@ -36,11 +36,15 @@ func spawn():
 		speed = randf_range(255.0, 500.0)
 		scale = Vector2(5,5)
 		set_sprite()
-		var random_spawn_position = Vector2((screen_size.x + sprites[0].texture.get_width() * 2.5), randf_range(0, screen_size.y))
+		var texture = sprites[0].sprite_frames.get_frame_texture("default", 0)
+
+		var sprite_width = texture.get_size().x
+
+		var random_spawn_position = Vector2((screen_size.x + sprite_width * 2.5), randf_range(0, screen_size.y))
 		global_position = random_spawn_position
+
 	else:
 		queue_free()
-
 
 func set_sprite():
 	for sprite in sprites:

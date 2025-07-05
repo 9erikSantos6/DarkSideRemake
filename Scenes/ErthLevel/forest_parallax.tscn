@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://tt304qerlga"]
+
+[ext_resource type="Texture2D" uid="uid://dpmo2hef3hd04" path="res://Assets/Backgrounds/parallax/forest/forest_sky.png" id="1_wsn1u"]
+[ext_resource type="Texture2D" uid="uid://8wsociko7k6k" path="res://Assets/Backgrounds/parallax/forest/forest_moon.png" id="2_n5hay"]
+[ext_resource type="Texture2D" uid="uid://jftptye27bdh" path="res://Assets/Backgrounds/parallax/forest/forest_mountain.png" id="3_3nsyq"]
+[ext_resource type="Texture2D" uid="uid://dg8v5ela26fk5" path="res://Assets/Backgrounds/parallax/forest/forest_back.png" id="4_t73i3"]
+[ext_resource type="Texture2D" uid="uid://cloq5xfcstpjo" path="res://Assets/Backgrounds/parallax/forest/forest_mid.png" id="5_f7shg"]
+[ext_resource type="Texture2D" uid="uid://2qq2hlrhypph" path="res://Assets/Backgrounds/parallax/forest/forest_long.png" id="6_3d3ul"]
+[ext_resource type="Texture2D" uid="uid://dus8x02mbem8f" path="res://Assets/Backgrounds/parallax/forest/forest_short.png" id="7_jqknw"]
+
+[node name="ForestParallax" type="Node2D"]
+
+[node name="forest_sky" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="forest_sky"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_wsn1u")
+expand_mode = 1
+
+[node name="forest_moon" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-2, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="forest_moon"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_n5hay")
+expand_mode = 1
+
+[node name="forest_mountain" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="forest_mountain"]
+offset_right = 1922.0
+offset_bottom = 1080.0
+texture = ExtResource("3_3nsyq")
+expand_mode = 1
+
+[node name="forest_back" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-250, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="forest_back"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_t73i3")
+expand_mode = 1
+
+[node name="forest_mid" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-350, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="forest_mid"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_f7shg")
+expand_mode = 1
+
+[node name="forest_long" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-450, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="forest_long"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_3d3ul")
+expand_mode = 1
+
+[node name="forest_short" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-800, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="forest_short"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_jqknw")
+expand_mode = 1

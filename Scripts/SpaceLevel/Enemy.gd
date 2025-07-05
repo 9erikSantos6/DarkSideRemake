@@ -32,7 +32,7 @@ func control_move(delta):
 
 
 func spawn():
-	if Global.node_game and Global.node_player:
+	if Global.space_node_main and Global.node_player:
 		speed = randf_range(255.0, 500.0)
 		scale = Vector2(5,5)
 		set_sprite()
@@ -62,7 +62,7 @@ func die():
 	speed = 0
 	sound_fx = Global.instace_sound_fx()
 	sound_fx.play_audio('explosion', global_position)
-	Global.node_game.player_pontuation += 5
+	Global.space_node_main.player_pontuation += 5
 	alive = false
 	queue_free()
 

@@ -4,9 +4,11 @@ extends Node2D
 @export var spawn_enemies_probability: float = 0.5
 @export var max_enemies_horde_size: int = 2
 
-@export var player_scene = preload("res://Scenes/SpaceLevel/Elements/Player.tscn")
-@export var plasma_scene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
-@export var enemy_scene = preload("res://Scenes/SpaceLevel/Elements/Enemy.tscn")
+@export var space_parallax_bg: PackedScene = preload("res://Scenes/SpaceLevel/Elements/SpaceParallaxBg.tscn")
+@export var player_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Player.tscn")
+@export var plasma_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
+@export var enemy_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Enemy.tscn")
+
 
 var player_pontuation = 0
 
@@ -20,12 +22,13 @@ func _process(_delta):
 
 func init_game():
 	randomize()
-	Global.node_game = self
+	Global.space_node_main = self
 	instance_nodes()
 	$start_spawn_enemies.start()
 
 
 func instance_nodes():
+	Global.instance_node(space_parallax_bg, self)
 	Global.instance_node(player_scene, self)
 
 
@@ -45,5 +48,5 @@ func randomly_spawn_enemys():
 
 
 func _exit_tree():
-	Global.node_game = null
+	Global.space_node_main = null
 	queue_free()

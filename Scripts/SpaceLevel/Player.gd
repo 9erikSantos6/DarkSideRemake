@@ -9,7 +9,7 @@ var plasma_scene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
 var alife = false
 var plasma_fired = false
 var plasma_loaded = false
-var sound 
+var sound
 
 func _ready():
 	spawn()
@@ -21,7 +21,7 @@ func _physics_process(delta):
 
 
 func spawn():
-	if Global.node_game:
+	if Global.space_node_main:
 		Global.node_player = self
 		alife = true
 		plasma_fired = false
@@ -49,10 +49,10 @@ func control_shot():
 	if Input.is_action_pressed("player_shoot") and plasma_loaded and alife:
 		plasma_fired = true
 		plasma_loaded = false
-		Global.instance_node_in_position(plasma_scene, global_position, Global.node_game)
+		Global.instance_node_in_position(plasma_scene, global_position, Global.space_node_main)
 		$reload_plasma.start()
 		$plasma_shot.play()
-		
+
 
 
 func _on_reload_plasma_timeout():

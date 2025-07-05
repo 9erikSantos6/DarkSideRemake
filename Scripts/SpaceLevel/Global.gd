@@ -2,8 +2,8 @@ extends Node
 
 var soundFx_scene = preload("res://Scenes/SpaceLevel/SondFx/SoundFx.tscn")
 
-var node_game = null
-var node_player = null
+var space_node_main: Node2D
+var node_player: Area2D
 
 var screen_size: Vector2 = Vector2.ZERO
 
@@ -34,8 +34,8 @@ func instance_node_in_position(scene_name, position, parent):
 	new_node.global_position = position
 	return new_node
 
-	
+
 func instace_sound_fx():
 	var new_node = soundFx_scene.instantiate()
-	node_game.add_child(new_node)
+	space_node_main.add_child(new_node)
 	return new_node

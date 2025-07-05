@@ -13,7 +13,7 @@ func _physics_process(delta):
 
 
 func spawn():
-	if Global.node_game == get_parent():
+	if Global.space_node_main == get_parent():
 		scale = Vector2(0.5,0.5)
 	elif Global.node_player == get_parent():
 		pass

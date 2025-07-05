@@ -21,12 +21,15 @@ func _ready():
 	spawn()
 	#var sond_fx = Global
 
+
 func _physics_process(delta):
 	control_move(delta)
+
 
 func control_move(delta):
 	var direction = Vector2(1, 0)
 	global_position -= direction.normalized() * speed * delta
+
 
 func spawn():
 	if Global.node_game and Global.node_player:
@@ -37,16 +40,19 @@ func spawn():
 		global_position = random_spawn_position
 	else:
 		queue_free()
-	
+
+
 func set_sprite():
 	for sprite in sprites:
 		sprite.visible = false
 	var random_sprite = floor(randf_range(0, sprites.size()))
 	sprites[random_sprite].visible = true
 
+
 func _on_Enemy_area_entered(area):
 	if area.is_in_group("player"):
 		die()
+
 
 func die():
 	speed = 0
@@ -55,9 +61,11 @@ func die():
 	Global.node_game.player_pontuation += 5
 	alive = false
 	queue_free()
-	
+
+
 func _exit_tree():
 	queue_free()
+
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

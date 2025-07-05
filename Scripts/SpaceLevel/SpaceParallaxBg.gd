@@ -1,30 +1,26 @@
 extends Node2D
 
-@export var animated_galaxy: PackedScene = preload("res://Scenes/SpaceLevel/Elements/AnimatedGalaxies.tscn")
+@export var galaxy_animated_sprite: PackedScene = preload("res://Scenes/SpaceLevel/Elements/GalaxyAnimationSprite.tscn")
 
+var parallaxGalaxies: Parallax2D
 
 func _ready() -> void:
-	pass
-	
+	parallaxGalaxies = $GalaxiasProximas
+	spawn_galaxies()
 
 
-func _on_galaxias_proximas_ready() -> void:
-	var galaxy_a = animated_galaxy.instantiate()
-	var galaxy_b = animated_galaxy.instantiate()
-	var galaxy_c = animated_galaxy.instantiate()
-	
-	galaxy_a.galaxy_type = Global.GalaxysType.GalaxyA
-	galaxy_b.galaxy_type = Global.GalaxysType.GalaxyB
-	galaxy_c.galaxy_type = Global.GalaxysType.GalaxyC
-	
-	galaxy_a.position = galaxy_a.random_spawn_position()
-	galaxy_a.position = galaxy_b.random_spawn_position()
-	galaxy_a.position = galaxy_c.random_spawn_position()
-	
-	galaxy_a.scale = Vector2(4, 4)
-	galaxy_b.scale = Vector2(5, 5)
-	galaxy_c.scale = Vector2(1, 1)
-	
-	$GalaxiasProximas.add_child(galaxy_a)
-	$GalaxiasProximas.add_child(galaxy_b)
-	$GalaxiasProximas.add_child(galaxy_c)
+func spawn_galaxies(quantidade: int = 2) -> void:
+	var repeat_width = parallaxGalaxies.repeat_size.x
+	if repeat_width <= 0:
+		repeat_width = Global.screen_size.x * parallaxGalaxies.repeat_times
+
+	for i in range(quantidade):
+		var galaxy = galaxy_animated_sprite.instantiate()
+		galaxy.galaxy_type = randi_range(0, 2)
+		var rand_scale = randi_range(1, 4)
+		galaxy.scale = Vector2(rand_scale, rand_scale)
+		parallaxGalaxies.add_child(galaxy)
+		
+		var pos_x = (i + 0.5) * (repeat_width / quantidade)
+		var pos_y = galaxy.random_spawn_position().y
+		galaxy.position = Vector2(pos_x, pos_y)

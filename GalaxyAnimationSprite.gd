@@ -1,4 +1,4 @@
-extends Node2D
+extends AnimatedSprite2D
 
 @export var galaxy_type: Global.GalaxysType = Global.GalaxysType.GalaxyA
 
@@ -9,11 +9,11 @@ var screen_size: Vector2 = Global.screen_size
 
 
 func _ready() -> void:
-	anim_sprite = $GalaxyAnimation
+	#anim_sprite = $GalaxyAnimation
 
 	var animation_name = str(galaxy_type)
 
-	var texture = anim_sprite.sprite_frames.get_frame_texture(animation_name, 0)
+	var texture = sprite_frames.get_frame_texture(animation_name, 0)
 	sprite_width = texture.get_size().x
 
 	_select_animation(animation_name)
@@ -25,7 +25,7 @@ func random_spawn_position() -> Vector2:
 	if parallax_node:
 		repeat_size_x = parallax_node.repeat_size.x
 
-	var effective_width = sprite_width * anim_sprite.scale.x
+	var effective_width = sprite_width * scale.x
 	var spawn_x = randf_range(0, repeat_size_x - effective_width)
 	var spawn_y = randf_range(0, screen_size.y)
 
@@ -33,9 +33,9 @@ func random_spawn_position() -> Vector2:
 
 
 func get_real_width() -> float:
-	if anim_sprite and anim_sprite.sprite_frames:
+	if sprite_frames:
 		var animation_name = str(galaxy_type)
-		var texture = anim_sprite.sprite_frames.get_frame_texture(animation_name, 0)
+		var texture = sprite_frames.get_frame_texture(animation_name, 0)
 		if texture:
 			return texture.get_size().x * scale.x
 	return 0.0
@@ -43,15 +43,15 @@ func get_real_width() -> float:
 
 func random_spawn():
 	position = random_spawn_position()
-	anim_sprite.visible = true
+	visible = true
 
-func  spawn():
-	anim_sprite.visible = true
+func spawn():
+	visible = true
 
 func _select_animation(animation_name):
-	if anim_sprite.sprite_frames and anim_sprite.sprite_frames.has_animation(animation_name):
+	if sprite_frames and sprite_frames.has_animation(animation_name):
 		#anim_sprite.visible = false
-		anim_sprite.play(animation_name)
+		play(animation_name)
 	else:
 		push_warning("Animação '%s' não encontrada!" % animation_name)
-		anim_sprite.visible = false
+		visible = false

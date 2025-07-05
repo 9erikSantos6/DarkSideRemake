@@ -3,10 +3,38 @@
 # top-most EditorConfig file
 root = true
 
+# Unix-style newlines with a newline ending every file.
 [*]
-indent_style = space
-indent_size = tab
-end_of_line = crlf
 charset = utf-8
-trim_trailing_whitespace = false
+end_of_line = lf
+insert_final_newline = true
+
+[*.gd]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.cs]
+csharp_space_after_cast = false
+indent_size = 4
+
+[*.csproj]
 insert_final_newline = false
+indent_size = 2
+
+[*.{tscn, tscn.import, tres, cfg, gdignore, godot}]
+indent_style = space
+indent_size = 4
+
+[*.{py,js,ts,css,html,md,txt}]
+indent_style = space
+indent_size = 4
+
+[Makefile]
+indent_style = tab
+
+[*.{png,jpg,jpeg,ogg,mp3,import,exe,zip,tar,gz,7z}]
+binary = true

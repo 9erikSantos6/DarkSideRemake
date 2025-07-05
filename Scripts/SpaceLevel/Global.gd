@@ -1,17 +1,23 @@
 extends Node
 
-var soundFx_scene = preload("res://Scenes/SondFx/SoundFx.tscn")
+var soundFx_scene = preload("res://Scenes/SpaceLevel/SondFx/SoundFx.tscn")
 
 var node_game = null
 var node_player = null
 
-var screem_size
+var screen_size: Vector2 = Vector2.ZERO
+
+enum GalaxysType {
+	GalaxyA,
+	GalaxyB,
+	GalaxyC
+}
 
 func _ready():
-	screem_size = get_viewport().size
+	screen_size = get_viewport().size
 
 func _process(_delta):
-	screem_size = get_viewport().size
+	screen_size = get_viewport().size
 	
 func instance_node(scene_name, parent):
 	var new_node = scene_name.instantiate()

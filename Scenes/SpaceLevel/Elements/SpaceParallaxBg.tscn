@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhajwkbqw8t2u"]
+
+[ext_resource type="Script" path="res://Scripts/SpaceLevel/SpaceParallaxBg.gd" id="1_ah6y1"]
+[ext_resource type="Texture2D" uid="uid://d25150ehcjxt3" path="res://Assets/Backgrounds/SpaceLevel/EstrelasDistantesPX.png" id="2_4iuq1"]
+[ext_resource type="Texture2D" uid="uid://gm61qwr6me4l" path="res://Assets/Backgrounds/SpaceLevel/EstrelasProximasPX.png" id="3_3ykuh"]
+
+[node name="SpaceBackGround" type="Node2D"]
+script = ExtResource("1_ah6y1")
+
+[node name="GaláxiasDistantes" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-10, 0)
+
+[node name="TextureRect" type="TextureRect" parent="GaláxiasDistantes"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4iuq1")
+
+[node name="GalaxiasProximas" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-500, 0)
+repeat_times = 3
+
+[node name="EstrelasProximas" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-120, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="EstrelasProximas"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_3ykuh")
+
+[connection signal="ready" from="GalaxiasProximas" to="." method="_on_galaxias_proximas_ready"]

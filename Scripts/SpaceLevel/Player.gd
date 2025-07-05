@@ -3,9 +3,9 @@ extends Area2D
 
 @export var speed: float = 850.0
 
-var screem_size = Global.screem_size
+var screen_size = Global.screen_size
 
-var plasma_scene = preload("res://scenes/elements/Plasma.tscn")
+var plasma_scene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
 
 var alife = false
 var plasma_fired = false
@@ -26,7 +26,7 @@ func spawn():
 		plasma_fired = false
 		plasma_loaded = true
 		scale = Vector2(5, 5)
-		global_position = Vector2((0.14 * screem_size.x), (0.5 * screem_size.y))
+		global_position = Vector2((0.14 * screen_size.x), (0.5 * screen_size.y))
 		#$ship_engines.play() Desativado momentaneamente
 	else:
 		queue_free()
@@ -39,8 +39,8 @@ func control_player(delta):
 		if direction.length() > 0:
 			direction = direction.normalized() * speed
 		global_position += direction * delta
-		global_position.x = clamp(global_position.x, 0, screem_size.x)
-		global_position.y = clamp(global_position.y, 0, screem_size.y)
+		global_position.x = clamp(global_position.x, 0, screen_size.x)
+		global_position.y = clamp(global_position.y, 0, screen_size.y)
 
 func control_shot():
 	if Input.is_action_pressed("player_shoot") and plasma_loaded and alife:

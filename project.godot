@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="DarkSideRemake(BASE)"
-run/main_scene="uid://phnd3s04p4jl"
-config/features=PackedStringArray("4.4")
+config/name="DarkSideRemake"
+run/main_scene="res://Scenes/SpaceLevel/SpaceLevel.tscn"
+config/features=PackedStringArray("4.3")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/use_filter=false
 config/icon="res://icon.png"
@@ -30,6 +30,11 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Cosmic Ascension"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [gui]
 

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmqxtk67qtwcp"]
+
+[ext_resource type="AudioStream" uid="uid://c6wyroib3k0ek" path="res://Assets/Sounds/plasma_shot.wav" id="2"]
+[ext_resource type="Texture2D" uid="uid://du2jahruj1nof" path="res://Assets/Sprites/SpaceLevel/deathship.png" id="3"]
+[ext_resource type="Script" path="res://Scripts/SpaceLevel/Player.gd" id="4"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(16, 12)
+
+[node name="Player" type="Area2D" groups=["player"]]
+scale = Vector2(5, 5)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("4")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+texture = ExtResource("3")
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="reload_plasma" type="Timer" parent="."]
+wait_time = 0.23
+one_shot = true
+
+[node name="ship_engines" type="AudioStreamPlayer" parent="."]
+
+[node name="plasma_shot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2")
+
+[node name="damage" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="timeout" from="reload_plasma" to="." method="_on_reload_plasma_timeout"]

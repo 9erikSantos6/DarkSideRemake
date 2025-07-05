@@ -6,7 +6,7 @@ var speed
 
 var alive = false 
 var sprites
-var screen_size = Global.screem_size
+var screen_size = Global.screen_size
 
 var sound_fx 
 

@@ -4,10 +4,9 @@ extends Node2D
 @export var spawn_enemies_probability: float = 0.5
 @export var max_enemies_horde_size: int = 2
 
-@export var space_scene = preload("res://Scenes/Elements/SpaceAnimation.tscn")
-@export var player_scene = preload("res://Scenes/Elements/Player.tscn")
-@export var plasma_scene = preload("res://Scenes/Elements/Plasma.tscn")
-@export var enemy_scene = preload("res://Scenes/Elements/Enemy.tscn")
+@export var player_scene = preload("res://Scenes/SpaceLevel/Elements/Player.tscn")
+@export var plasma_scene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
+@export var enemy_scene = preload("res://Scenes/SpaceLevel/Elements/Enemy.tscn")
 
 var player_pontuation = 0
 
@@ -24,7 +23,6 @@ func init_game():
 	$start_spawn_enemies.start()
 
 func instance_nodes():
-	Global.instance_node(space_scene, self)
 	Global.instance_node(player_scene, self)
 
 func _on_start_spawn_enemies_timeout():

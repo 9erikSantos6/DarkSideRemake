@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c41owm30w7c7x"]
+
+[ext_resource type="Script" path="res://Scripts/SpaceLevel/SoundFx.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://d4do25wfx1mk4" path="res://Assets/Sounds/explosion02.wav" id="2"]
+
+[node name="SoundFx" type="Node2D"]
+script = ExtResource("1")
+
+[node name="explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2")
+
+[node name="ship_engines" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[connection signal="tree_exited" from="." to="." method="_on_SoundFx_tree_exited"]
+[connection signal="finished" from="explosion" to="." method="_on_explosion_finished"]
+[connection signal="finished" from="ship_engines" to="." method="_on_ship_engines_finished"]

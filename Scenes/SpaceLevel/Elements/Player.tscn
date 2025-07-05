@@ -1,22 +1,120 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmqxtk67qtwcp"]
+[gd_scene load_steps=21 format=3 uid="uid://dmqxtk67qtwcp"]
 
 [ext_resource type="AudioStream" uid="uid://c6wyroib3k0ek" path="res://Assets/Sounds/plasma_shot.wav" id="2"]
-[ext_resource type="Texture2D" uid="uid://du2jahruj1nof" path="res://Assets/Sprites/SpaceLevel/deathship.png" id="3"]
-[ext_resource type="Script" path="res://Scripts/SpaceLevel/Player.gd" id="4"]
+[ext_resource type="Script" uid="uid://cg6d0i5kf7jes" path="res://Scripts/SpaceLevel/Player.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://cubvxvfbut0xa" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_high.png" id="4_4vije"]
+[ext_resource type="Texture2D" uid="uid://boai1nyqijhns" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="4_sw31o"]
+[ext_resource type="Texture2D" uid="uid://c1og60scgdxsi" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="5_8cxfu"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(16, 12)
+size = Vector2(41.8, 9.80003)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vije"]
+atlas = ExtResource("4_sw31o")
+region = Rect2(0, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cxfu"]
+atlas = ExtResource("4_sw31o")
+region = Rect2(350, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f58y"]
+atlas = ExtResource("4_sw31o")
+region = Rect2(700, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dng4v"]
+atlas = ExtResource("4_sw31o")
+region = Rect2(1050, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e2nd"]
+atlas = ExtResource("4_sw31o")
+region = Rect2(1400, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vgpx"]
+atlas = ExtResource("4_sw31o")
+region = Rect2(1750, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdn42"]
+atlas = ExtResource("4_sw31o")
+region = Rect2(2100, 0, 350, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0br3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vije")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cxfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f58y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dng4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e2nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vgpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdn42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0br3j"]
+atlas = ExtResource("4_4vije")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npfu4"]
+atlas = ExtResource("4_4vije")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdi27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0br3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npfu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdhst"]
+atlas = ExtResource("5_8cxfu")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccuve"]
+atlas = ExtResource("5_8cxfu")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghqa4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdhst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccuve")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
 [node name="Player" type="Area2D" groups=["player"]]
 scale = Vector2(5, 5)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("4")
-
-[node name="PlayerSprite" type="Sprite2D" parent="."]
-texture_filter = 1
-rotation = 1.5708
-texture = ExtResource("3")
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
@@ -31,5 +129,30 @@ one_shot = true
 stream = ExtResource("2")
 
 [node name="damage" type="AudioStreamPlayer2D" parent="."]
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.149143, 0.16)
+sprite_frames = SubResource("SpriteFrames_0br3j")
+autoplay = "default"
+frame_progress = 0.582896
+speed_scale = 0.2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="propellantSprite1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-27, 0.4)
+scale = Vector2(0.2625, 0.375)
+sprite_frames = SubResource("SpriteFrames_wdi27")
+autoplay = "default"
+frame_progress = 0.375682
+speed_scale = 0.2
+
+[node name="propellantSprite2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-25.6, 0.4)
+scale = Vector2(0.1875, 0.225)
+sprite_frames = SubResource("SpriteFrames_ghqa4")
+autoplay = "default"
+frame_progress = 0.0356779
+speed_scale = 0.2
 
 [connection signal="timeout" from="reload_plasma" to="." method="_on_reload_plasma_timeout"]

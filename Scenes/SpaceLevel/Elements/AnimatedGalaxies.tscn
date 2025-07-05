@@ -1,6 +1,6 @@
 [gd_scene load_steps=306 format=3 uid="uid://b7ljureecsea1"]
 
-[ext_resource type="Script" path="res://Scripts/SpaceLevel/AnimatedGalaxies.gd" id="1_mgu0p"]
+[ext_resource type="Script" uid="uid://bmo1sdgbbk2ri" path="res://Scripts/SpaceLevel/AnimatedGalaxies.gd" id="1_mgu0p"]
 [ext_resource type="Texture2D" uid="uid://5kchdchkoksr" path="res://Assets/Sprites/SpaceLevel/Galaxy - 271336758 - spritesheet.png" id="2_r07bc"]
 [ext_resource type="Texture2D" uid="uid://dim4o1crui25l" path="res://Assets/Sprites/SpaceLevel/Galaxy - 2136872746 - spritesheet.png" id="3_culnt"]
 [ext_resource type="Texture2D" uid="uid://b7ve0auhp66xq" path="res://Assets/Sprites/SpaceLevel/Galaxy - 696208766 - spritesheet.png" id="4_f2d2g"]

@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1flb8jps1876"]
+
+[ext_resource type="Texture2D" uid="uid://hyuxoi2eyhkg" path="res://Assets/Backgrounds/parallax/Iceberg/0-water.png" id="1_vctv3"]
+[ext_resource type="Texture2D" uid="uid://boiiavrssg0gg" path="res://Assets/Backgrounds/parallax/Iceberg/1-Sky.png" id="2_tdsg4"]
+[ext_resource type="Texture2D" uid="uid://dwo6hom55shhl" path="res://Assets/Backgrounds/parallax/Iceberg/2-cloud.png" id="3_jqa4w"]
+[ext_resource type="Texture2D" uid="uid://75asapiybm1j" path="res://Assets/Backgrounds/parallax/Iceberg/3-mountains.png" id="4_xk731"]
+[ext_resource type="Texture2D" uid="uid://nrswajyh2xce" path="res://Assets/Backgrounds/parallax/Iceberg/5-iceberg.png" id="5_fnwqo"]
+[ext_resource type="Texture2D" uid="uid://ctm7v76flwv58" path="res://Assets/Backgrounds/parallax/Iceberg/4-icebergreflex.png" id="6_ebfl4"]
+[ext_resource type="Texture2D" uid="uid://dl4vhs7gebl5r" path="res://Assets/Backgrounds/parallax/Iceberg/2-1-water reflex.png" id="7_akeam"]
+[ext_resource type="Texture2D" uid="uid://cxnf5gx8a64uo" path="res://Assets/Backgrounds/parallax/Iceberg/2-2-water reflex back.png" id="8_ny63v"]
+
+[node name="iceberg_parallax" type="Node2D"]
+
+[node name="icer_water" type="Parallax2D" parent="."]
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="icer_water"]
+offset_top = -1.0
+offset_right = 7600.0
+offset_bottom = 1080.0
+texture = ExtResource("1_vctv3")
+expand_mode = 1
+
+[node name="icer_sky" type="Parallax2D" parent="."]
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 4
+
+[node name="TextureRect" type="TextureRect" parent="icer_sky"]
+offset_left = 3804.0
+offset_right = 7604.0
+offset_bottom = 1080.0
+texture = ExtResource("2_tdsg4")
+expand_mode = 1
+
+[node name="icer_cloud" type="Parallax2D" parent="."]
+repeat_size = Vector2(3800, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="icer_cloud"]
+offset_right = 3800.0
+offset_bottom = 1080.0
+texture = ExtResource("3_jqa4w")
+expand_mode = 1
+
+[node name="icer_mountais" type="Parallax2D" parent="."]
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(-200, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="icer_mountais"]
+offset_right = 3800.0
+offset_bottom = 1080.0
+texture = ExtResource("4_xk731")
+expand_mode = 1
+
+[node name="icer_iceberg" type="Parallax2D" parent="."]
+repeat_size = Vector2(7600, 0)
+autoscroll = Vector2(-700, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="icer_iceberg"]
+offset_top = 282.0
+offset_right = 7600.0
+offset_bottom = 1362.0
+texture = ExtResource("5_fnwqo")
+expand_mode = 1
+
+[node name="icer_icebergflex" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-17, 0)
+repeat_size = Vector2(7600, 0)
+autoscroll = Vector2(-700, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="icer_icebergflex"]
+offset_top = 293.0
+offset_right = 7600.0
+offset_bottom = 1373.0
+texture = ExtResource("6_ebfl4")
+expand_mode = 1
+
+[node name="icer_waterflex1" type="Parallax2D" parent="."]
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(-1200, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="icer_waterflex1"]
+offset_right = 3800.0
+offset_bottom = 1080.0
+texture = ExtResource("7_akeam")
+expand_mode = 1
+
+[node name="icer_waterflex2" type="Parallax2D" parent="."]
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(-1200, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="icer_waterflex2"]
+offset_top = 34.0
+offset_right = 3800.0
+offset_bottom = 1114.0
+texture = ExtResource("8_ny63v")
+expand_mode = 1

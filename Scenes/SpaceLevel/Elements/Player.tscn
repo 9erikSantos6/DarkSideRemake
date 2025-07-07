@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmqxtk67qtwcp"]
+[gd_scene load_steps=22 format=3 uid="uid://dmqxtk67qtwcp"]
 
 [ext_resource type="AudioStream" uid="uid://c6wyroib3k0ek" path="res://Assets/Sounds/plasma_shot.wav" id="2"]
-[ext_resource type="Script" uid="uid://cg6d0i5kf7jes" path="res://Scripts/SpaceLevel/Player.gd" id="4"]
+[ext_resource type="Script" path="res://Scripts/SpaceLevel/Player.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://cubvxvfbut0xa" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_high.png" id="4_4vije"]
 [ext_resource type="Texture2D" uid="uid://boai1nyqijhns" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="4_sw31o"]
 [ext_resource type="Texture2D" uid="uid://c1og60scgdxsi" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="5_8cxfu"]
+[ext_resource type="AudioStream" uid="uid://darco5c6wlrkd" path="res://Assets/Sounds/Som-Motor_spaceship.mp3" id="6_xp0mp"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(41.8, 9.80003)
@@ -154,5 +155,9 @@ sprite_frames = SubResource("SpriteFrames_ghqa4")
 autoplay = "default"
 frame_progress = 0.0356779
 speed_scale = 0.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_xp0mp")
+autoplay = true
 
 [connection signal="timeout" from="reload_plasma" to="." method="_on_reload_plasma_timeout"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctrusjy8pkvju"]
 
-[ext_resource type="Script" path="res://Scripts/SpaceLevel/SpaceParallaxBg.gd" id="1_ah6y1"]
+[ext_resource type="Script" uid="uid://drp2t8il61m1t" path="res://Scripts/SpaceLevel/SpaceParallaxBg.gd" id="1_ah6y1"]
 [ext_resource type="Texture2D" uid="uid://d25150ehcjxt3" path="res://Assets/Backgrounds/SpaceLevel/EstrelasDistantesPX.png" id="2_4iuq1"]
 [ext_resource type="Texture2D" uid="uid://gm61qwr6me4l" path="res://Assets/Backgrounds/SpaceLevel/EstrelasProximasPX.png" id="3_3ykuh"]
 [ext_resource type="Texture2D" uid="uid://ctexoc1jqfkqx" path="res://Assets/Backgrounds/SpaceLevel/GalaxiasProximas.png" id="3_56wh5"]

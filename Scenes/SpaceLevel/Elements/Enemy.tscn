@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://c0vgq3wpfflww"]
 
-[ext_resource type="Script" path="res://Scripts/SpaceLevel/Enemy.gd" id="1_fbjb6"]
+[ext_resource type="Script" uid="uid://clvmo77xu30yn" path="res://Scripts/SpaceLevel/Enemy.gd" id="1_fbjb6"]
 [ext_resource type="Texture2D" uid="uid://be8e7awqpgw0f" path="res://Assets/Backgrounds/Bonus (enemies)/enemy_circle-sheet.png" id="2_50o41"]
 [ext_resource type="Texture2D" uid="uid://jh36f58tyful" path="res://Assets/Backgrounds/Bonus (enemies)/enemy_zig_zag-sheet.png" id="3_264vf"]
 [ext_resource type="Texture2D" uid="uid://bii0als883hrj" path="res://Assets/Backgrounds/Bonus (enemies)/kamikaze-sheet.png" id="4_dkfj3"]

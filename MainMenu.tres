@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bkmj4glhuk6vm"]
+
+[ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="1_ev3hj"]
+
+[resource]
+default_font_size = 30
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_ev3hj")

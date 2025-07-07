@@ -6,6 +6,7 @@ extends Node2D
 
 @export var space_parallax_bg: PackedScene = preload("res://Scenes/SpaceLevel/Elements/SpaceParallaxBg.tscn")
 @export var player_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Player.tscn")
+@export var player_2_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Player.tscn")
 @export var plasma_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
 @export var enemy_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Enemy.tscn")
 
@@ -30,6 +31,7 @@ func init_game():
 func instance_nodes():
 	Global.instance_node(space_parallax_bg, self)
 	Global.instance_node(player_scene, self)
+	Global.instance_node(player_2_scene, self)
 
 
 func _on_start_spawn_enemies_timeout():

@@ -2,18 +2,26 @@ extends Area2D
 
 @export var speed: float = 850.0
 
-var screen_size = Global.screen_size
+var screen_size: Vector2
 
 var plasma_scene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
 
+
+var player_index: int
 var alife = false
 var plasma_fired = false
 var plasma_loaded = false
 var sound
 
+
 func _ready():
+	screen_size = Global.screen_size
 	spawn()
 
+
+func _process(_delta):
+	screen_size = Global.screen_size
+	pass
 
 func _physics_process(delta):
 	control_player(delta)
@@ -22,7 +30,7 @@ func _physics_process(delta):
 
 func spawn():
 	if Global.space_node_main:
-		Global.node_player = self
+		player_index = Global.add_player(self)
 		alife = true
 		plasma_fired = false
 		plasma_loaded = true
@@ -36,8 +44,9 @@ func spawn():
 func control_player(delta):
 	if alife:
 		var direction = Vector2.ZERO
-		direction.x = int(Input.is_action_pressed("player_move_right")) - int(Input.is_action_pressed("player_move_left"))
-		direction.y = int(Input.is_action_pressed("player_move_down")) - int(Input.is_action_pressed("player_move_up"))
+		direction.x = int(Input.is_action_pressed("player_%s_move_right" % str(player_index))) - int(Input.is_action_pressed("player_%s_move_left" % str(player_index)))
+		direction.y = int(Input.is_action_pressed("player_%s_move_down" % str(player_index))) - int(Input.is_action_pressed("player_%s_move_up" % str(player_index)))
+
 		if direction.length() > 0:
 			direction = direction.normalized() * speed
 		global_position += direction * delta
@@ -46,13 +55,19 @@ func control_player(delta):
 
 
 func control_shot():
-	if Input.is_action_pressed("player_shoot") and plasma_loaded and alife:
+	if Input.is_action_pressed("player_%s_shoot" % str(player_index)) and plasma_loaded and alife:
 		plasma_fired = true
 		plasma_loaded = false
-		Global.instance_node_in_position(plasma_scene, global_position, Global.space_node_main)
+		instantiate_plasma(global_position)
 		$reload_plasma.start()
 		$plasma_shot.play()
 
+
+func instantiate_plasma(position_plasma: Vector2):
+	var plasma = plasma_scene.instantiate()
+	plasma.add_player_parent(self)
+	add_child(plasma)
+	plasma.global_position = position_plasma
 
 
 func _on_reload_plasma_timeout():
@@ -67,9 +82,8 @@ func die():
 
 
 func _exit_tree():
-	Global.node_player = null
+	Global.player_nodes[player_index] = null
 	alife = false
 	plasma_fired = false
 	plasma_loaded = false
 	# $ship_engines.stop() Desativado momentaneamente
-	queue_free()

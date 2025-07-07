@@ -32,7 +32,7 @@ func control_move(delta):
 
 
 func spawn():
-	if Global.space_node_main and Global.node_player:
+	if Global.space_node_main and Global.player_nodes.size() > 0:
 		speed = randf_range(255.0, 500.0)
 		scale = Vector2(5,5)
 		set_sprite()

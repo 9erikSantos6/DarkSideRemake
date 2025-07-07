@@ -134,7 +134,7 @@ stream = ExtResource("2")
 scale = Vector2(0.149143, 0.16)
 sprite_frames = SubResource("SpriteFrames_0br3j")
 autoplay = "default"
-frame_progress = 0.582896
+frame_progress = 0.657397
 speed_scale = 0.2
 
 [node name="Node2D" type="Node2D" parent="."]

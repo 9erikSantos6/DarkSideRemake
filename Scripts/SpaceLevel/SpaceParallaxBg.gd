@@ -6,7 +6,7 @@ var parallaxGalaxies: Parallax2D
 
 func _ready() -> void:
 	parallaxGalaxies = $GalaxiasProximas
-	spawn_galaxies()
+	spawn_galaxies(3)
 
 
 func spawn_galaxies(quantidade: int = 2) -> void:

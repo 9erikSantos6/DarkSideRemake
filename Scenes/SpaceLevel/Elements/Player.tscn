@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cubvxvfbut0xa" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_high.png" id="4_4vije"]
 [ext_resource type="Texture2D" uid="uid://boai1nyqijhns" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="4_sw31o"]
 [ext_resource type="Texture2D" uid="uid://c1og60scgdxsi" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="5_8cxfu"]
-[ext_resource type="AudioStream" uid="uid://darco5c6wlrkd" path="res://Assets/Sounds/Som-Motor_spaceship.mp3" id="6_xp0mp"]
+[ext_resource type="AudioStream" uid="uid://k3j2hlrcnb5s" path="res://Assets/Sounds/Som-Motor_spaceship.mp3" id="6_xp0mp"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(41.8, 9.80003)

@@ -4,11 +4,8 @@ var audio_nodes = {}
 
 
 func _ready():
-	if Global.space_node_main:
-		audio_nodes["explosion"] = $explosion
-		# audio_nodes["ship_engines"] = $ship_engines Desativado momentaneamente
-	else:
-		queue_free()
+	audio_nodes["explosion"] = $explosion
+	# audio_nodes["ship_engines"] = $ship_engines Desativado momentaneamente
 		
 func _process(_delta):
 	pass

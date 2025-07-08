@@ -2,11 +2,13 @@ extends Area2D
 
 @export var max_speed: float = 500.0
 @export var min_speed: float = 255.0
+@export var points_reward: int = 2
+
 var speed
 
 var alive = false
 var sprites
-var screen_size = Global.screen_size
+var screen_size = Game.screen_size
 
 var sound_fx
 
@@ -32,19 +34,16 @@ func control_move(delta):
 
 
 func spawn():
-	if Global.space_node_main and Global.player_nodes.size() > 0:
-		speed = randf_range(255.0, 500.0)
-		scale = Vector2(5,5)
-		set_sprite()
-		var texture = sprites[0].sprite_frames.get_frame_texture("default", 0)
+	speed = randf_range(255.0, 500.0)
+	scale = Vector2(5,5)
+	set_sprite()
+	var texture = sprites[0].sprite_frames.get_frame_texture("default", 0)
 
-		var sprite_width = texture.get_size().x
+	var sprite_width = texture.get_size().x
 
-		var random_spawn_position = Vector2((screen_size.x + sprite_width * 2.5), randf_range(0, screen_size.y))
-		global_position = random_spawn_position
+	var random_spawn_position = Vector2((screen_size.x + sprite_width * 2.5), randf_range(0, screen_size.y))
+	global_position = random_spawn_position
 
-	else:
-		queue_free()
 
 func set_sprite():
 	for sprite in sprites:
@@ -60,9 +59,10 @@ func _on_Enemy_area_entered(area):
 
 func die():
 	speed = 0
-	sound_fx = Global.instace_sound_fx()
+	sound_fx = Game.instace_sound_fx()
 	sound_fx.play_audio('explosion', global_position)
-	Global.space_node_main.player_pontuation += 5
+	# Global.space_node_main.player_pontuation += 5 Buscar forma de atualizar a pontuação do player
+	Game.set_player_stage_score(points_reward)
 	alive = false
 	queue_free()
 

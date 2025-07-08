@@ -15,12 +15,12 @@ var sound
 
 
 func _ready():
-	screen_size = Global.screen_size
+	screen_size = Game.screen_size
 	spawn()
 
 
 func _process(_delta):
-	screen_size = Global.screen_size
+	screen_size = Game.screen_size
 	pass
 
 func _physics_process(delta):
@@ -29,16 +29,13 @@ func _physics_process(delta):
 
 
 func spawn():
-	if Global.space_node_main:
-		player_index = Global.add_player(self)
-		alife = true
-		plasma_fired = false
-		plasma_loaded = true
-		scale = Vector2(5, 5)
-		global_position = Vector2((0.14 * screen_size.x), (0.5 * screen_size.y))
-		#$ship_engines.play() Desativado momentaneamente
-	else:
-		queue_free()
+	player_index = Game.add_player(self)
+	alife = true
+	plasma_fired = false
+	plasma_loaded = true
+	scale = Vector2(5, 5)
+	global_position = Vector2((0.14 * screen_size.x), (0.5 * screen_size.y))
+
 
 
 func control_player(delta):
@@ -83,7 +80,7 @@ func die():
 
 
 func _exit_tree():
-	Global.player_nodes[player_index] = null
+	Game.player_nodes[player_index] = null
 	alife = false
 	plasma_fired = false
 	plasma_loaded = false

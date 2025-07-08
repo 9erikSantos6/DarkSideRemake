@@ -15,6 +15,7 @@ autoscroll = Vector2(-5, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="GalaxiasDistantes"]
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_4iuq1")
@@ -31,6 +32,7 @@ autoscroll = Vector2(-10, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="EstrelasDistantes"]
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_56wh5")
@@ -41,6 +43,7 @@ autoscroll = Vector2(-50, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="EstrelasProximas"]
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_3ykuh")
@@ -52,6 +55,7 @@ autoscroll = Vector2(-300, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="Particulas"]
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_5wrx3")

@@ -14,14 +14,8 @@ func _physics_process(delta):
 
 
 func spawn():
-	if Global.space_node_main == get_parent():
-		scale = Vector2(0.5, 0.5)
-		fired = Global.player_nodes[parent_index].plasma_fired
-	elif Global.player_nodes[parent_index] == get_parent():
-		pass
-	else:
-		queue_free()
-
+	scale = Vector2(0.1, 0.1)
+	fired = Game.player_nodes[parent_index].plasma_fired
 
 func move(delta):
 	if fired:

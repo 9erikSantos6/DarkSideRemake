@@ -12,7 +12,7 @@ func _ready() -> void:
 func spawn_galaxies(quantidade: int = 2) -> void:
 	var repeat_width = parallaxGalaxies.repeat_size.x
 	if repeat_width <= 0:
-		repeat_width = Global.screen_size.x * parallaxGalaxies.repeat_times
+		repeat_width = Game.screen_size.x * parallaxGalaxies.repeat_times
 
 	for i in range(quantidade):
 		var galaxy = galaxy_animated_sprite.instantiate()
@@ -20,7 +20,11 @@ func spawn_galaxies(quantidade: int = 2) -> void:
 		var rand_scale = randi_range(1, 4)
 		galaxy.scale = Vector2(rand_scale, rand_scale)
 		parallaxGalaxies.add_child(galaxy)
-		
+
 		var pos_x = (i + 0.5) * (repeat_width / quantidade)
 		var pos_y = galaxy.random_spawn_position().y
 		galaxy.position = Vector2(pos_x, pos_y)
+
+
+func _on_start_btn_pressed() -> void:
+	pass # Replace with function body.

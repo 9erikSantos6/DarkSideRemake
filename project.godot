@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DarkSideRemake"
-run/main_scene="res://Scenes/SpaceLevel/SpaceLevel.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.3")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/use_filter=false
@@ -19,7 +19,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Scripts/SpaceLevel/Global.gd"
+Game="*res://Globals/Game.gd"
+Enums="*res://Globals/Enums.gd"
 
 [display]
 

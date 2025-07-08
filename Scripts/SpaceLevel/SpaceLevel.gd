@@ -14,14 +14,6 @@ extends Node2D
 var player_pontuation = 0
 
 func _ready():
-	init_game()
-
-
-func _process(_delta):
-	pass
-
-
-func init_game():
 	randomize()
 	Global.space_node_main = self
 	instance_nodes()

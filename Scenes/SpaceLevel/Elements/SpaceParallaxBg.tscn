@@ -46,8 +46,9 @@ offset_bottom = 40.0
 texture = ExtResource("3_3ykuh")
 
 [node name="Particulas" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 2)
 repeat_size = Vector2(1920, 0)
-autoscroll = Vector2(-200, 0)
+autoscroll = Vector2(-300, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="Particulas"]

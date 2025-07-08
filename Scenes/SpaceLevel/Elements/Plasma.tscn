@@ -29,6 +29,7 @@ animations = [{
 }]
 
 [node name="Plasma" type="Area2D" groups=["player"]]
+texture_filter = 1
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1")
@@ -42,6 +43,7 @@ position = Vector2(-7, -2)
 scale = Vector2(8.6, 1.5)
 
 [node name="PlasmaSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3g2ss")
 frame = 1
 frame_progress = 0.829665

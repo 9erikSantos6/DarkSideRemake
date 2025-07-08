@@ -5,19 +5,17 @@ extends Area2D
 var parent_index: int
 var fired: bool
 
-var player_parent: Area2D
-
 func _ready():
 	spawn()
 
 
 func _physics_process(delta):
-	control_move(delta)
+	move(delta)
 
 
 func spawn():
 	if Global.space_node_main == get_parent():
-		scale = Vector2(0.1, 0.1)
+		scale = Vector2(0.5, 0.5)
 		fired = Global.player_nodes[parent_index].plasma_fired
 	elif Global.player_nodes[parent_index] == get_parent():
 		pass
@@ -25,7 +23,7 @@ func spawn():
 		queue_free()
 
 
-func control_move(delta):
+func move(delta):
 	if fired:
 		var direction = Vector2(1,0)
 		direction = direction.normalized() * speed * delta
@@ -40,14 +38,14 @@ func collide():
 	speed = 0
 	queue_free()
 
+
 func add_player_parent(player: Area2D):
 	if player and player.is_in_group("player"):
-		player_parent = player
 		parent_index = player.player_index
 		fired = true
 	else:
-		player_parent = null
 		fired = false
+
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

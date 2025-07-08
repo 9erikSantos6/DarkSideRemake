@@ -66,8 +66,9 @@ func control_shot():
 func instantiate_plasma(position_plasma: Vector2):
 	var plasma = plasma_scene.instantiate()
 	plasma.add_player_parent(self)
-	add_child(plasma)
-	plasma.global_position = position_plasma
+	get_parent().add_child(plasma) # Corrigido aqui
+	plasma.scale = Vector2(1, 1)
+	plasma.global_position = Vector2(position_plasma.x, position_plasma.y)
 
 
 func _on_reload_plasma_timeout():

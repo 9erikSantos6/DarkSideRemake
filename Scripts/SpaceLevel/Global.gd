@@ -2,6 +2,8 @@ extends Node
 
 var soundFx_scene = preload("res://Scenes/SpaceLevel/SondFx/SoundFx.tscn")
 
+var score := 0
+
 var space_node_main: Node2D
 
 var player_nodes: Array[Area2D] = []

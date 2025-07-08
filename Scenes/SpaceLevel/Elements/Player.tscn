@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cubvxvfbut0xa" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_high.png" id="4_4vije"]
 [ext_resource type="Texture2D" uid="uid://boai1nyqijhns" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="4_sw31o"]
 [ext_resource type="Texture2D" uid="uid://c1og60scgdxsi" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="5_8cxfu"]
-[ext_resource type="AudioStream" uid="uid://darco5c6wlrkd" path="res://Assets/Sounds/Som-Motor_spaceship.mp3" id="6_xp0mp"]
+[ext_resource type="AudioStream" uid="uid://k3j2hlrcnb5s" path="res://Assets/Sounds/Som-Motor_spaceship.mp3" id="6_xp0mp"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(41.8, 9.80003)
@@ -138,8 +138,6 @@ autoplay = "default"
 frame_progress = 0.657397
 speed_scale = 0.2
 
-[node name="Node2D" type="Node2D" parent="."]
-
 [node name="propellantSprite1" type="AnimatedSprite2D" parent="."]
 position = Vector2(-27, 0.4)
 scale = Vector2(0.2625, 0.375)
@@ -159,5 +157,8 @@ speed_scale = 0.2
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_xp0mp")
 autoplay = true
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1, 1)
 
 [connection signal="timeout" from="reload_plasma" to="." method="_on_reload_plasma_timeout"]

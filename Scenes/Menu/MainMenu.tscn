@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgpl0qa2rinlh"]
 
-[ext_resource type="PackedScene" uid="uid://dhajwkbqw8t2u" path="res://Scenes/SpaceLevel/Elements/SpaceParallaxBg.tscn" id="1_mj0i0"]
+[ext_resource type="PackedScene" uid="uid://ctrusjy8pkvju" path="res://Scenes/SpaceLevel/Elements/SpaceParallaxBg.tscn" id="1_mj0i0"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="2_mj0i0"]
 [ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="3_35riq"]
 
@@ -18,6 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="SpaceParallaxBg" parent="." instance=ExtResource("1_mj0i0")]
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -34,8 +36,6 @@ text = "DARKSIDE"
 label_settings = SubResource("LabelSettings_35riq")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SpaceParallaxBg" parent="." instance=ExtResource("1_mj0i0")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

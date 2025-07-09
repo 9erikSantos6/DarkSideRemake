@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgpl0qa2rinlh"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu/MainMenu.gd" id="1_imlad"]
-[ext_resource type="PackedScene" uid="uid://ctrusjy8pkvju" path="res://Scenes/SpaceLevel/Elements/SpaceParallaxBg.tscn" id="2_2nhlg"]
-[ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="3_myocq"]
-[ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="4_h07td"]
-[ext_resource type="AudioStream" uid="uid://bdubeihx5h0oj" path="res://Assets/Sounds/MainMenuTema.ogg" id="5_pnaui"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/MainMenu.gd" id="1_sn6ps"]
+[ext_resource type="PackedScene" uid="uid://ctrusjy8pkvju" path="res://Scenes/SpaceLevel/Elements/SpaceParallaxBg.tscn" id="2_ttak4"]
+[ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="3_rw4he"]
+[ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="4_j7ysw"]
+[ext_resource type="AudioStream" uid="uid://bdubeihx5h0oj" path="res://Assets/Sounds/MainMenuTema.ogg" id="5_t5coc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_35riq"]
-font = ExtResource("3_myocq")
+font = ExtResource("3_rw4he")
 font_size = 70
 outline_size = 20
 outline_color = Color(1.44392e-06, 0.459239, 0.47295, 1)
@@ -19,18 +19,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_imlad")
+script = ExtResource("1_sn6ps")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SpaceParallaxBg" parent="." instance=ExtResource("2_2nhlg")]
+[node name="SpaceParallaxBg" parent="." instance=ExtResource("2_ttak4")]
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -65,36 +56,27 @@ size_flags_vertical = 4
 
 [node name="start_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_h07td")
+theme = ExtResource("4_j7ysw")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 10
 text = "START"
 
 [node name="muilt_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_h07td")
+theme = ExtResource("4_j7ysw")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 10
 text = "MUITIPLAYER"
 
 [node name="quit_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_h07td")
+theme = ExtResource("4_j7ysw")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 10
 text = "QUIT GAME"
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_pnaui")
+stream = ExtResource("5_t5coc")
 autoplay = true
 parameters/looping = true
 

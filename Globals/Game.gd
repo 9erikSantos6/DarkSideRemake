@@ -6,11 +6,10 @@ var soundFx_scene = preload("res://Scenes/SpaceLevel/SondFx/SoundFx.tscn")
 
 
 var _player_overall_score: int = 0
-var _player_score: int = 0
+var _player_score: int = 10000000
 var player_nodes: Array[Area2D] = []
 
 # var game_mode: Enum.GameMode = Enums.GameMode.SinglePlayer
-
 
 func _ready():
 	randomize()
@@ -32,7 +31,7 @@ func instance_node(scene_name, parent):
 	return new_node
 
 
-func instance_node_in_position(scene_name, position, parent):
+func instance_node_in_position(scene_name, position, parent) -> Variant:
 	var new_node = scene_name.instantiate()
 	parent.add_child(new_node)
 	new_node.global_position = position
@@ -51,9 +50,19 @@ func get_player_stage_score() -> int:
 func reset_player_stage_score() -> void:
 	_player_score = 0
 
-func set_player_stage_score(score: int) -> void:
-	_player_score = score
-	_player_overall_score += _player_score
+func set_player_stage_score(score: int):
+	if score > 0:
+		_player_score += score
+		_player_overall_score += _player_score
+	return _player_score
+
+func decrement_player_stage_score(score: int):
+	if score > 0:
+		_player_score -= score
+		_player_overall_score -= _player_score
+	if _player_score <= 0:
+		_player_score = 0
+	return _player_score
 
 func get_player_overall_score() -> int:
 	return _player_overall_score

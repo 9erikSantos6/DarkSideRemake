@@ -2,7 +2,8 @@ extends Area2D
 
 @export var max_speed: float = 500.0
 @export var min_speed: float = 255.0
-@export var points_reward: int = 2
+@export var reward_points: int = 2
+@export var punishiment_points: int = 5
 
 var speed
 
@@ -61,8 +62,7 @@ func die():
 	speed = 0
 	sound_fx = Game.instace_sound_fx()
 	sound_fx.play_audio('explosion', global_position)
-	# Global.space_node_main.player_pontuation += 5 Buscar forma de atualizar a pontuação do player
-	Game.set_player_stage_score(points_reward)
+	Game.set_player_stage_score(reward_points)
 	alive = false
 	queue_free()
 
@@ -72,4 +72,5 @@ func _exit_tree():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
+	Game.decrement_player_stage_score(punishiment_points)
 	queue_free()

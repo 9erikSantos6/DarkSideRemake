@@ -157,6 +157,8 @@ animations = [{
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_fbjb6")
+max_speed = 600.0
+min_speed = 300.0
 
 [node name="enemyCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)

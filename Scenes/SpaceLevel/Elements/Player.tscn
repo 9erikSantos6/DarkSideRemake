@@ -159,6 +159,5 @@ stream = ExtResource("6_xp0mp")
 autoplay = true
 
 [node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [connection signal="timeout" from="reload_plasma" to="." method="_on_reload_plasma_timeout"]

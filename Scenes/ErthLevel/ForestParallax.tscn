@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://tt304qerlga"]
 
-[ext_resource type="Texture2D" uid="uid://dpmo2hef3hd04" path="res://Assets/Backgrounds/parallax/forest/forest_sky.png" id="1_wsn1u"]
-[ext_resource type="Texture2D" uid="uid://8wsociko7k6k" path="res://Assets/Backgrounds/parallax/forest/forest_moon.png" id="2_n5hay"]
-[ext_resource type="Texture2D" uid="uid://jftptye27bdh" path="res://Assets/Backgrounds/parallax/forest/forest_mountain.png" id="3_3nsyq"]
-[ext_resource type="Texture2D" uid="uid://dg8v5ela26fk5" path="res://Assets/Backgrounds/parallax/forest/forest_back.png" id="4_t73i3"]
-[ext_resource type="Texture2D" uid="uid://cloq5xfcstpjo" path="res://Assets/Backgrounds/parallax/forest/forest_mid.png" id="5_f7shg"]
-[ext_resource type="Texture2D" uid="uid://2qq2hlrhypph" path="res://Assets/Backgrounds/parallax/forest/forest_long.png" id="6_3d3ul"]
-[ext_resource type="Texture2D" uid="uid://dus8x02mbem8f" path="res://Assets/Backgrounds/parallax/forest/forest_short.png" id="7_jqknw"]
-[ext_resource type="PackedScene" uid="uid://cpnacakddc55a" path="res://UI/PauseMenu.tscn" id="8_3sqxq"]
+[ext_resource type="Texture2D" uid="uid://dpmo2hef3hd04" path="res://Assets/Backgrounds/parallax/forest/forest_sky.png" id="1_uyo6v"]
+[ext_resource type="Texture2D" uid="uid://8wsociko7k6k" path="res://Assets/Backgrounds/parallax/forest/forest_moon.png" id="2_vtpkc"]
+[ext_resource type="Texture2D" uid="uid://jftptye27bdh" path="res://Assets/Backgrounds/parallax/forest/forest_mountain.png" id="3_hdrq8"]
+[ext_resource type="Texture2D" uid="uid://dg8v5ela26fk5" path="res://Assets/Backgrounds/parallax/forest/forest_back.png" id="4_dkm87"]
+[ext_resource type="Texture2D" uid="uid://cloq5xfcstpjo" path="res://Assets/Backgrounds/parallax/forest/forest_mid.png" id="5_1011g"]
+[ext_resource type="Texture2D" uid="uid://2qq2hlrhypph" path="res://Assets/Backgrounds/parallax/forest/forest_long.png" id="6_e8tjo"]
+[ext_resource type="Texture2D" uid="uid://dus8x02mbem8f" path="res://Assets/Backgrounds/parallax/forest/forest_short.png" id="7_qfgob"]
+[ext_resource type="PackedScene" uid="uid://cpnacakddc55a" path="res://UI/PauseMenu.tscn" id="8_coyr4"]
 
 [node name="ForestParallax" type="Node2D"]
 
@@ -19,7 +19,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="forest_sky"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_wsn1u")
+texture = ExtResource("1_uyo6v")
 expand_mode = 1
 
 [node name="forest_moon" type="Parallax2D" parent="."]
@@ -30,7 +30,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="forest_moon"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_n5hay")
+texture = ExtResource("2_vtpkc")
 expand_mode = 1
 
 [node name="forest_mountain" type="Parallax2D" parent="."]
@@ -41,7 +41,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="forest_mountain"]
 offset_right = 1922.0
 offset_bottom = 1080.0
-texture = ExtResource("3_3nsyq")
+texture = ExtResource("3_hdrq8")
 expand_mode = 1
 
 [node name="forest_back" type="Parallax2D" parent="."]
@@ -52,7 +52,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="forest_back"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("4_t73i3")
+texture = ExtResource("4_dkm87")
 expand_mode = 1
 
 [node name="forest_mid" type="Parallax2D" parent="."]
@@ -63,7 +63,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="forest_mid"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("5_f7shg")
+texture = ExtResource("5_1011g")
 expand_mode = 1
 
 [node name="forest_long" type="Parallax2D" parent="."]
@@ -74,7 +74,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="forest_long"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("6_3d3ul")
+texture = ExtResource("6_e8tjo")
 expand_mode = 1
 
 [node name="forest_short" type="Parallax2D" parent="."]
@@ -85,7 +85,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="forest_short"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("7_jqknw")
+texture = ExtResource("7_qfgob")
 expand_mode = 1
 
-[node name="Pause_menu" parent="." instance=ExtResource("8_3sqxq")]
+[node name="Pause_menu" parent="." instance=ExtResource("8_coyr4")]

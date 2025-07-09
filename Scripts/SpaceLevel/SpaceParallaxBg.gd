@@ -24,7 +24,3 @@ func spawn_galaxies(quantidade: int = 2) -> void:
 		var pos_x = (i + 0.5) * (repeat_width / quantidade)
 		var pos_y = galaxy.random_spawn_position().y
 		galaxy.position = Vector2(pos_x, pos_y)
-
-
-func _on_start_btn_pressed() -> void:
-	pass # Replace with function body.

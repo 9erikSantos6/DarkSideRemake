@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://e08m0o11mgsj"]
+[gd_scene load_steps=7 format=3 uid="uid://e08m0o11mgsj"]
 
+[ext_resource type="Script" path="res://Scripts/UI/Hud.gd" id="1_o6sek"]
 [ext_resource type="Texture2D" uid="uid://disqsxs7mv7gx" path="res://Assets/PNG/ProgressBar_02/BarV2_ProgressBarBorder.png" id="1_pgpgf"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="2_gynh4"]
 
@@ -33,18 +34,19 @@ corner_radius_bottom_left = 5
 expand_margin_left = 5.0
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_o6sek")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="IntegrityContainer" type="VBoxContainer" parent="."]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 460.0
 offset_bottom = 180.0
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Player1" type="HBoxContainer" parent="IntegrityContainer"]
 layout_mode = 2
 
-[node name="health_bar1" type="ProgressBar" parent="VBoxContainer/HBoxContainer1"]
+[node name="IntegrityBar" type="ProgressBar" parent="IntegrityContainer/Player1"]
 custom_minimum_size = Vector2(450, 40)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -53,7 +55,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_nwfkp")
 value = 50.0
 show_percentage = false
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer1/health_bar1"]
+[node name="TextureRect" type="TextureRect" parent="IntegrityContainer/Player1/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_pgpgf")
 
-[node name="Label1" type="Label" parent="VBoxContainer/HBoxContainer1/health_bar1"]
+[node name="Label1" type="Label" parent="IntegrityContainer/Player1/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -80,10 +82,10 @@ theme_override_fonts/font = ExtResource("2_gynh4")
 theme_override_font_sizes/font_size = 10
 text = "PLAYER 1"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Player2" type="HBoxContainer" parent="IntegrityContainer"]
 layout_mode = 2
 
-[node name="health_bar2" type="ProgressBar" parent="VBoxContainer/HBoxContainer2"]
+[node name="IntegrityBar" type="ProgressBar" parent="IntegrityContainer/Player2"]
 custom_minimum_size = Vector2(450, 40)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -92,7 +94,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_nwfkp")
 value = 25.0
 show_percentage = false
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/health_bar2"]
+[node name="Label2" type="Label" parent="IntegrityContainer/Player2/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -106,7 +108,7 @@ theme_override_fonts/font = ExtResource("2_gynh4")
 theme_override_font_sizes/font_size = 10
 text = "PLAYER 2"
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2/health_bar2"]
+[node name="TextureRect2" type="TextureRect" parent="IntegrityContainer/Player2/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

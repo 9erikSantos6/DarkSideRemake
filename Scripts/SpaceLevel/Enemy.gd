@@ -78,8 +78,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.take_damege(damage_caused)
-		die_by_collision()
+		if body.alive:
+			body.take_damege(damage_caused)
+			die_by_collision()
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player's shot"):

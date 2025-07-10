@@ -1,13 +1,13 @@
 [gd_scene load_steps=110 format=3 uid="uid://giuefv7nyqqp"]
 
-[ext_resource type="Texture2D" uid="uid://dt42dyki5328j" path="res://Assets/Backgrounds/Moon/moon_sky.png" id="1_i1h0i"]
-[ext_resource type="Texture2D" uid="uid://c87km33rtkmqb" path="res://Assets/Backgrounds/Moon/moon_earth.png" id="2_i3tpp"]
-[ext_resource type="Texture2D" uid="uid://cvkjqmltfdqy" path="res://Assets/Backgrounds/Moon/moon_back.png" id="3_275hb"]
+[ext_resource type="Texture2D" uid="uid://dlqh8n4qlfs0w" path="res://Assets/Backgrounds/Moon/moon2/moon_sky.png" id="1_3w7ks"]
+[ext_resource type="Texture2D" uid="uid://dcih5c73nucsu" path="res://Assets/Backgrounds/Moon/moon2/moon_earth.png" id="2_1njek"]
 [ext_resource type="Texture2D" uid="uid://brvsha164bxix" path="res://Assets/Sprites/Planet/1440756505.png" id="3_i3tpp"]
-[ext_resource type="Texture2D" uid="uid://dpb5qdn2o1wiu" path="res://Assets/Backgrounds/Moon/moon_mid.png" id="4_3hs57"]
 [ext_resource type="Texture2D" uid="uid://bylmst4sux04n" path="res://Assets/Sprites/Planet/3744016202(2).png" id="4_275hb"]
-[ext_resource type="Texture2D" uid="uid://ov1ady31uaam" path="res://Assets/Backgrounds/Moon/moon_front.png" id="5_p175h"]
-[ext_resource type="Texture2D" uid="uid://6jxego6hcoa0" path="res://Assets/Backgrounds/Moon/moon_floor.png" id="6_1y2qe"]
+[ext_resource type="Texture2D" uid="uid://bgu0otdmjelt4" path="res://Assets/Backgrounds/Moon/moon2/moon_back.png" id="5_b3u6v"]
+[ext_resource type="Texture2D" uid="uid://dj28xseqd6sxb" path="res://Assets/Backgrounds/Moon/moon2/moon_mid.png" id="6_gwti6"]
+[ext_resource type="Texture2D" uid="uid://cfcb1efug3yln" path="res://Assets/Backgrounds/Moon/moon2/moon_front.png" id="7_xpwiy"]
+[ext_resource type="Texture2D" uid="uid://dc4r3tttjh0an" path="res://Assets/Backgrounds/Moon/moon2/moon_floor.png" id="8_st5jv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bod3h"]
 atlas = ExtResource("4_275hb")
@@ -732,7 +732,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="moon_sky"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_i1h0i")
+texture = ExtResource("1_3w7ks")
 
 [node name="moon_earth" type="Parallax2D" parent="."]
 repeat_size = Vector2(3800, 0)
@@ -742,7 +742,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="moon_earth"]
 offset_right = 3800.0
 offset_bottom = 1080.0
-texture = ExtResource("2_i3tpp")
+texture = ExtResource("2_1njek")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="moon_earth"]
 visible = false
@@ -760,7 +760,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="moon_back"]
 offset_right = 3800.0
 offset_bottom = 1080.0
-texture = ExtResource("3_275hb")
+texture = ExtResource("5_b3u6v")
 
 [node name="moon_mid" type="Parallax2D" parent="."]
 repeat_size = Vector2(3800, 0)
@@ -770,7 +770,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="moon_mid"]
 offset_right = 3800.0
 offset_bottom = 1080.0
-texture = ExtResource("4_3hs57")
+texture = ExtResource("6_gwti6")
 
 [node name="moon_front" type="Parallax2D" parent="."]
 repeat_size = Vector2(3800, 0)
@@ -780,7 +780,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="moon_front"]
 offset_right = 3800.0
 offset_bottom = 1080.0
-texture = ExtResource("5_p175h")
+texture = ExtResource("7_xpwiy")
 
 [node name="moon_floor" type="Parallax2D" parent="."]
 repeat_size = Vector2(1900, 0)
@@ -790,4 +790,4 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="moon_floor"]
 offset_right = 1900.0
 offset_bottom = 1080.0
-texture = ExtResource("6_1y2qe")
+texture = ExtResource("8_st5jv")

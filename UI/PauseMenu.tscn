@@ -74,6 +74,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="br_overlay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 300.0
+offset_right = 150.0
+offset_bottom = 468.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="br_overlay/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="br_overlay/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_qapfa")
+theme_override_font_sizes/font_size = 60
+text = "PAUSE"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="br_overlay"]
 layout_mode = 1
 anchors_preset = 8
@@ -82,23 +105,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -136.0
-offset_top = -248.0
+offset_top = 10.0
 offset_right = 136.0
-offset_bottom = 248.0
+offset_bottom = 390.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="br_overlay/HBoxContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="br_overlay/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_qapfa")
-theme_override_font_sizes/font_size = 40
-text = "PAUSE"
+theme_override_constants/separation = 0
 
 [node name="resume_btn" type="Button" parent="br_overlay/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -121,8 +136,7 @@ size_flags_vertical = 4
 theme = ExtResource("3_8pi8g")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 10
-text = "GAME MENU
-"
+text = "GAME MENU"
 
 [node name="quit_btn" type="Button" parent="br_overlay/HBoxContainer/VBoxContainer"]
 layout_mode = 2

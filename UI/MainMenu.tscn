@@ -28,8 +28,7 @@ script = ExtResource("1_8thk7")
 position = Vector2(1817, 649)
 rotation = 0.436332
 scale = Vector2(11, 11)
-animation = &"4"
-body_type = 3
+frame_progress = 0.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

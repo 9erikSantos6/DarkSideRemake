@@ -79,7 +79,7 @@ func die(atomize=false):
 	# $ship_engines.stop() Desativado momentaneamente
 	visible = false
 	alive = false
-	$PlayerCollisionShape.set_disabled(true)
+	$PlayerCollisionShape.set_deferred("disabled", true)
 	integrity = 0
 	if atomize:	queue_free()
 

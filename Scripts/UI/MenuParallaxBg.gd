@@ -16,7 +16,7 @@ func spawn_celestial_bodies(quantidade: int = 2) -> void:
 
 	for i in range(quantidade):
 		var body = celestial_bodies_animated_sprite.instantiate()
-		body.body_type = randi_range(0, 4)
+		body.body_type = randi_range(0, 3)
 		var rand_scale = randi_range(1, 3)
 		body.scale = Vector2(rand_scale, rand_scale)
 		parallaxCelestialBody.add_child(body)

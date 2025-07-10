@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://gjidtmmyj8mi"]
+[gd_scene load_steps=3 format=3 uid="uid://dwb7yxms7npmo"]
 
-[ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="1_1x7au"]
-[ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="2_gurci"]
+[ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="1_bqtaa"]
+[ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="2_orh0b"]
 
-[node name="game_over" type="CanvasLayer"]
+[node name="Gameover" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -39,7 +39,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("1_1x7au")
+theme_override_fonts/font = ExtResource("1_bqtaa")
 theme_override_font_sizes/font_size = 60
 text = "GAME OVER"
 
@@ -63,21 +63,21 @@ theme_override_constants/separation = 0
 
 [node name="Button" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_gurci")
+theme = ExtResource("2_orh0b")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 15
 text = "RETRY GAME"
 
 [node name="gamemenu_btn" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_gurci")
+theme = ExtResource("2_orh0b")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 15
 text = "GAME MENU"
 
 [node name="quit_btn" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_gurci")
+theme = ExtResource("2_orh0b")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
 theme_override_constants/outline_size = 15
 text = "QUIT GAME"

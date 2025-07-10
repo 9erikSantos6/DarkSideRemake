@@ -66,21 +66,21 @@ size_flags_vertical = 4
 layout_mode = 2
 theme = ExtResource("4_j7ysw")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 text = "START"
 
 [node name="muilt_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_j7ysw")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 text = "MUITIPLAYER"
 
 [node name="quit_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_j7ysw")
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 text = "QUIT GAME"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

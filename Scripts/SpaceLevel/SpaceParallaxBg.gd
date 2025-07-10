@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var galaxy_animated_sprite: PackedScene = preload("res://Scenes/SpaceLevel/Elements/GalaxyAnimationSprite.tscn")
+@export var galaxy_animated_sprite: PackedScene = preload("res://Prefabs/Space/CelestialBodyAnimationSprite.tscn")
 
 var parallaxGalaxies: Parallax2D
 
@@ -16,7 +16,7 @@ func spawn_galaxies(quantidade: int = 2) -> void:
 
 	for i in range(quantidade):
 		var galaxy = galaxy_animated_sprite.instantiate()
-		galaxy.galaxy_type = randi_range(0, 2)
+		galaxy.body_type = randi_range(0, 2)
 		var rand_scale = randi_range(1, 4)
 		galaxy.scale = Vector2(rand_scale, rand_scale)
 		parallaxGalaxies.add_child(galaxy)

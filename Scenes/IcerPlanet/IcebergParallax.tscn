@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1flb8jps1876"]
+[gd_scene load_steps=8 format=3 uid="uid://b1flb8jps1876"]
 
-[ext_resource type="Texture2D" uid="uid://hyuxoi2eyhkg" path="res://Assets/Backgrounds/parallax/Iceberg/0-water.png" id="1_3s44v"]
-[ext_resource type="Texture2D" uid="uid://boiiavrssg0gg" path="res://Assets/Backgrounds/parallax/Iceberg/1-Sky.png" id="2_p7dvn"]
-[ext_resource type="Texture2D" uid="uid://dwo6hom55shhl" path="res://Assets/Backgrounds/parallax/Iceberg/2-cloud.png" id="3_x7lxp"]
-[ext_resource type="Texture2D" uid="uid://75asapiybm1j" path="res://Assets/Backgrounds/parallax/Iceberg/3-mountains.png" id="4_5t17t"]
-[ext_resource type="Texture2D" uid="uid://nrswajyh2xce" path="res://Assets/Backgrounds/parallax/Iceberg/5-iceberg.png" id="5_oxjjv"]
-[ext_resource type="Texture2D" uid="uid://ctm7v76flwv58" path="res://Assets/Backgrounds/parallax/Iceberg/4-icebergreflex.png" id="6_g53k8"]
-[ext_resource type="Texture2D" uid="uid://dl4vhs7gebl5r" path="res://Assets/Backgrounds/parallax/Iceberg/2-1-water reflex.png" id="7_7ctd0"]
-[ext_resource type="Texture2D" uid="uid://cxnf5gx8a64uo" path="res://Assets/Backgrounds/parallax/Iceberg/2-2-water reflex back.png" id="8_5yhpo"]
+[ext_resource type="Texture2D" uid="uid://hyuxoi2eyhkg" path="res://Assets/Backgrounds/Iceberg/0-water.png" id="1_3s44v"]
+[ext_resource type="Texture2D" uid="uid://boiiavrssg0gg" path="res://Assets/Backgrounds/Iceberg/1-Sky.png" id="2_p7dvn"]
+[ext_resource type="Texture2D" uid="uid://dwo6hom55shhl" path="res://Assets/Backgrounds/Iceberg/2-cloud.png" id="3_x7lxp"]
+[ext_resource type="Texture2D" uid="uid://75asapiybm1j" path="res://Assets/Backgrounds/Iceberg/3-mountains.png" id="4_5t17t"]
+[ext_resource type="Texture2D" uid="uid://nrswajyh2xce" path="res://Assets/Backgrounds/Iceberg/5-iceberg.png" id="5_oxjjv"]
+[ext_resource type="Texture2D" uid="uid://ctm7v76flwv58" path="res://Assets/Backgrounds/Iceberg/4-icebergreflex.png" id="6_g53k8"]
+[ext_resource type="Texture2D" uid="uid://cxnf5gx8a64uo" path="res://Assets/Backgrounds/Iceberg/2-2-water reflex back.png" id="8_5yhpo"]
 
 [node name="iceberg_parallax" type="Node2D"]
 
@@ -89,7 +88,7 @@ repeat_times = 3
 [node name="TextureRect" type="TextureRect" parent="icer_waterflex1"]
 offset_right = 3800.0
 offset_bottom = 1080.0
-texture = ExtResource("7_7ctd0")
+texture = ExtResource("8_5yhpo")
 expand_mode = 1
 
 [node name="icer_waterflex2" type="Parallax2D" parent="."]

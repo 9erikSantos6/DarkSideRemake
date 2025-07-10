@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://e08m0o11mgsj"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Hud.gd" id="1_o6sek"]
-[ext_resource type="Texture2D" uid="uid://disqsxs7mv7gx" path="res://Assets/PNG/ProgressBar_02/BarV2_ProgressBarBorder.png" id="1_pgpgf"]
+[ext_resource type="Texture2D" uid="uid://disqsxs7mv7gx" path="res://Assets/Images/ProgressBar_02/BarV2_ProgressBarBorder.png" id="1_pgpgf"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="2_gynh4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdru2"]

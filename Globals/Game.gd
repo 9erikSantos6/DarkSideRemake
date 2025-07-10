@@ -6,10 +6,10 @@ var soundFx_scene = preload("res://Scenes/SpaceLevel/SondFx/SoundFx.tscn")
 
 
 var _player_overall_score: int = 0
-var _player_score: int = 10000000
-var player_nodes: Array[Area2D] = []
+var _player_score: int = 0
+var player_nodes: Array[CharacterBody2D] = []
 
-# var game_mode: Enum.GameMode = Enums.GameMode.SinglePlayer
+var game_mode: Enums.GameMode = Enums.GameMode.SinglePlayer
 
 func _ready():
 	randomize()
@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 	screen_size = get_viewport().size
 
 
-func add_player(layer: Area2D) -> int:
+func add_player(layer: CharacterBody2D) -> int:
 	player_nodes.append(layer)
 	return player_nodes.size() - 1
 

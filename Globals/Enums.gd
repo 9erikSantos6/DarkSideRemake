@@ -1,10 +1,12 @@
 extends Node
 
 
-enum GalaxysType {
-	GalaxyA,
-	GalaxyB,
-	GalaxyC
+enum CelestialBodyType {
+	BodyAA,
+	BodyAB,
+	BodyAC,
+	BodyAD,
+	BodyAE
 }
 
 enum PlayerType {

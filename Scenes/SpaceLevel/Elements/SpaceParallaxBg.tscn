@@ -1,30 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctrusjy8pkvju"]
+[gd_scene load_steps=7 format=3 uid="uid://ctrusjy8pkvju"]
 
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/SpaceParallaxBg.gd" id="1_ah6y1"]
-[ext_resource type="Texture2D" uid="uid://d25150ehcjxt3" path="res://Assets/Backgrounds/SpaceLevel/EstrelasDistantesPX.png" id="2_4iuq1"]
-[ext_resource type="Texture2D" uid="uid://gm61qwr6me4l" path="res://Assets/Backgrounds/SpaceLevel/EstrelasProximasPX.png" id="3_3ykuh"]
-[ext_resource type="Texture2D" uid="uid://ctexoc1jqfkqx" path="res://Assets/Backgrounds/SpaceLevel/GalaxiasProximas.png" id="3_56wh5"]
-[ext_resource type="Texture2D" uid="uid://dc02vlqja7xyl" path="res://Assets/Backgrounds/SpaceLevel/Particulas.png" id="5_5wrx3"]
+[ext_resource type="Texture2D" uid="uid://dx3sfcjwbseyh" path="res://Assets/Backgrounds/SpaceLevel/GalaxiasDistantes.webp" id="2_girtd"]
+[ext_resource type="Texture2D" uid="uid://cvx5w0we18eah" path="res://Assets/Backgrounds/SpaceLevel/GalaxiasProximas.webp" id="3_kyxqn"]
+[ext_resource type="Texture2D" uid="uid://cdagy020axudg" path="res://Assets/Backgrounds/SpaceLevel/EstrelasDistantesPX.webp" id="4_rp4cu"]
+[ext_resource type="Texture2D" uid="uid://dvripkgy58jk3" path="res://Assets/Backgrounds/SpaceLevel/EstrelasProximasPX.webp" id="5_1df6e"]
+[ext_resource type="Texture2D" uid="uid://dlbi6kr2bxyms" path="res://Assets/Backgrounds/SpaceLevel/Particulas.webp" id="6_oj4nb"]
 
 [node name="SpaceParallaxBg" type="Node2D"]
 script = ExtResource("1_ah6y1")
 
 [node name="GalaxiasDistantes" type="Parallax2D" parent="."]
 repeat_size = Vector2(1920, 0)
-autoscroll = Vector2(-5, 0)
+autoscroll = Vector2(-3, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="GalaxiasDistantes"]
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_4iuq1")
+texture = ExtResource("2_girtd")
 
 [node name="GalaxiasProximas" type="Parallax2D" parent="."]
 modulate = Color(0.89059, 0.89059, 0.89059, 1)
 repeat_size = Vector2(1920, 0)
-autoscroll = Vector2(-8, 0)
+autoscroll = Vector2(-5, 0)
 repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="GalaxiasProximas"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_kyxqn")
 
 [node name="EstrelasDistantes" type="Parallax2D" parent="."]
 repeat_size = Vector2(1920, 0)
@@ -35,27 +41,65 @@ repeat_times = 3
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_56wh5")
+texture = ExtResource("4_rp4cu")
 
 [node name="EstrelasProximas" type="Parallax2D" parent="."]
 repeat_size = Vector2(1920, 0)
-autoscroll = Vector2(-50, 0)
+autoscroll = Vector2(-30, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="EstrelasProximas"]
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_3ykuh")
+texture = ExtResource("5_1df6e")
 
-[node name="Particulas" type="Parallax2D" parent="."]
+[node name="ParticulasHorizontais" type="Parallax2D" parent="."]
 scroll_scale = Vector2(2, 2)
 repeat_size = Vector2(1920, 0)
-autoscroll = Vector2(-300, 0)
+autoscroll = Vector2(-350, 0)
 repeat_times = 3
 
-[node name="TextureRect" type="TextureRect" parent="Particulas"]
+[node name="TextureRect" type="TextureRect" parent="ParticulasHorizontais"]
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("5_5wrx3")
+texture = ExtResource("6_oj4nb")
+
+[node name="ParticulasHorizontais2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 2)
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="ParticulasHorizontais2"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_oj4nb")
+flip_h = true
+
+[node name="ParticulasVerticais" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 2)
+repeat_size = Vector2(0, 1080)
+autoscroll = Vector2(0, 80)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="ParticulasVerticais"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_oj4nb")
+
+[node name="ParticulasVerticais2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 2)
+repeat_size = Vector2(0, 1080)
+autoscroll = Vector2(0, -80)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="ParticulasVerticais2"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_oj4nb")
+flip_h = true

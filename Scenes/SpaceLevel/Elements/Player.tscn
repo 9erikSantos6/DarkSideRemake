@@ -1,13 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmqxtk67qtwcp"]
+[gd_scene load_steps=21 format=3 uid="uid://ctuywtg2f61yb"]
 
-[ext_resource type="AudioStream" uid="uid://c6wyroib3k0ek" path="res://Assets/Sounds/plasma_shot.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://cnqerv0uqnfqs" path="res://Assets/Sounds/Fx/plasma_impact.wav" id="2"]
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/Player.gd" id="4"]
-[ext_resource type="Texture2D" uid="uid://cubvxvfbut0xa" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_high.png" id="4_4vije"]
-[ext_resource type="Texture2D" uid="uid://boai1nyqijhns" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="4_sw31o"]
-[ext_resource type="Texture2D" uid="uid://c1og60scgdxsi" path="res://Assets/Backgrounds/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="5_8cxfu"]
-[ext_resource type="AudioStream" uid="uid://k3j2hlrcnb5s" path="res://Assets/Sounds/Som-Motor_spaceship.mp3" id="6_xp0mp"]
+[ext_resource type="Texture2D" uid="uid://cubvxvfbut0xa" path="res://Assets/Sprites/Player/sprite_player_spaceship_exhaust_high.png" id="4_4vije"]
+[ext_resource type="Texture2D" uid="uid://boai1nyqijhns" path="res://Assets/Sprites/Player/sprite_player_spaceship_up_down.png" id="4_sw31o"]
+[ext_resource type="Texture2D" uid="uid://c1og60scgdxsi" path="res://Assets/Sprites/Player/sprite_player_spaceship_exhaust_low.png" id="5_8cxfu"]
 
-[sub_resource type="RectangleShape2D" id="1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2nxy"]
 size = Vector2(41.8, 9.80003)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vije"]
@@ -38,7 +37,7 @@ region = Rect2(1750, 0, 350, 150)
 atlas = ExtResource("4_sw31o")
 region = Rect2(2100, 0, 350, 150)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0br3j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_iahc4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -75,7 +74,7 @@ region = Rect2(0, 0, 64, 32)
 atlas = ExtResource("4_4vije")
 region = Rect2(64, 0, 64, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wdi27"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mge0e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -97,7 +96,7 @@ region = Rect2(0, 0, 64, 32)
 atlas = ExtResource("5_8cxfu")
 region = Rect2(64, 0, 64, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ghqa4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ught"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -111,14 +110,15 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="Player" type="Area2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(5, 5)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 4
+motion_mode = 1
 script = ExtResource("4")
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("1")
+shape = SubResource("RectangleShape2D_h2nxy")
 
 [node name="reload_plasma" type="Timer" parent="."]
 wait_time = 0.23
@@ -133,31 +133,22 @@ stream = ExtResource("2")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.149143, 0.16)
-sprite_frames = SubResource("SpriteFrames_0br3j")
+sprite_frames = SubResource("SpriteFrames_iahc4")
 autoplay = "default"
-frame_progress = 0.657397
 speed_scale = 0.2
 
 [node name="propellantSprite1" type="AnimatedSprite2D" parent="."]
 position = Vector2(-27, 0.4)
 scale = Vector2(0.2625, 0.375)
-sprite_frames = SubResource("SpriteFrames_wdi27")
+sprite_frames = SubResource("SpriteFrames_mge0e")
 autoplay = "default"
-frame_progress = 0.375682
 speed_scale = 0.2
 
 [node name="propellantSprite2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-25.6, 0.4)
 scale = Vector2(0.1875, 0.225)
-sprite_frames = SubResource("SpriteFrames_ghqa4")
+sprite_frames = SubResource("SpriteFrames_7ught")
 autoplay = "default"
-frame_progress = 0.0356779
 speed_scale = 0.2
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_xp0mp")
-autoplay = true
-
-[node name="Node2D" type="Node2D" parent="."]
 
 [connection signal="timeout" from="reload_plasma" to="." method="_on_reload_plasma_timeout"]

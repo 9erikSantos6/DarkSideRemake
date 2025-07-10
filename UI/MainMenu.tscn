@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgpl0qa2rinlh"]
+[gd_scene load_steps=8 format=3 uid="uid://bgpl0qa2rinlh"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_8thk7"]
-[ext_resource type="PackedScene" uid="uid://ctrusjy8pkvju" path="res://Scenes/SpaceLevel/Elements/SpaceParallaxBg.tscn" id="2_ttak4"]
+[ext_resource type="PackedScene" uid="uid://ctdk30sfq16mf" path="res://UI/MenuParallaxBg.tscn" id="2_bn0jj"]
+[ext_resource type="PackedScene" uid="uid://ciu1xxi3q0njf" path="res://Prefabs/Space/CelestialBodyAnimationSprite.tscn" id="3_ivmdw"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="3_rw4he"]
 [ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="4_j7ysw"]
-[ext_resource type="AudioStream" uid="uid://bdubeihx5h0oj" path="res://Assets/Sounds/MainMenuTema.ogg" id="5_t5coc"]
+[ext_resource type="AudioStream" uid="uid://dj2ch1xc06fpq" path="res://Assets/Sounds/Music/MainMenuTema.ogg" id="5_t5coc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_35riq"]
 font = ExtResource("3_rw4he")
@@ -21,7 +22,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8thk7")
 
-[node name="SpaceParallaxBg" parent="." instance=ExtResource("2_ttak4")]
+[node name="MenuParallaxBg" parent="." instance=ExtResource("2_bn0jj")]
+
+[node name="CelestialBodyAnimationSprite" parent="MenuParallaxBg" instance=ExtResource("3_ivmdw")]
+position = Vector2(1817, 649)
+rotation = 0.436332
+scale = Vector2(11, 11)
+animation = &"4"
+body_type = 3
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

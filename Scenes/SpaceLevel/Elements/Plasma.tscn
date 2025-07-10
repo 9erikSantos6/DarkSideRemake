@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dhbwau3m85ffy"]
 
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/Plasma.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://wf3h0evb5tbx" path="res://Assets/Backgrounds/Bonus (player ship)/shooting laser-sheet.png" id="3_d7ar7"]
+[ext_resource type="Texture2D" uid="uid://wf3h0evb5tbx" path="res://Assets/Sprites/Player/shooting laser-sheet.png" id="3_d7ar7"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(172, 30)
@@ -28,10 +28,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Plasma" type="Area2D" groups=["player"]]
+[node name="Plasma" type="Area2D" groups=["player\'s shot"]]
 texture_filter = 1
-collision_layer = 2
-collision_mask = 5
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1")
 
 [node name="PlasmaCollisionShape" type="CollisionShape2D" parent="."]

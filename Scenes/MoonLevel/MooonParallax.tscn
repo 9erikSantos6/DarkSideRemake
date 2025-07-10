@@ -1,13 +1,13 @@
 [gd_scene load_steps=110 format=3 uid="uid://giuefv7nyqqp"]
 
-[ext_resource type="Texture2D" uid="uid://dt42dyki5328j" path="res://Assets/Backgrounds/parallax/moon/moon_sky.png" id="1_i1h0i"]
-[ext_resource type="Texture2D" uid="uid://c87km33rtkmqb" path="res://Assets/Backgrounds/parallax/moon/moon_earth.png" id="2_i3tpp"]
-[ext_resource type="Texture2D" uid="uid://cvkjqmltfdqy" path="res://Assets/Backgrounds/parallax/moon/moon_back.png" id="3_275hb"]
+[ext_resource type="Texture2D" uid="uid://dt42dyki5328j" path="res://Assets/Backgrounds/Moon/moon_sky.png" id="1_i1h0i"]
+[ext_resource type="Texture2D" uid="uid://c87km33rtkmqb" path="res://Assets/Backgrounds/Moon/moon_earth.png" id="2_i3tpp"]
+[ext_resource type="Texture2D" uid="uid://cvkjqmltfdqy" path="res://Assets/Backgrounds/Moon/moon_back.png" id="3_275hb"]
 [ext_resource type="Texture2D" uid="uid://brvsha164bxix" path="res://Assets/Sprites/Planet/1440756505.png" id="3_i3tpp"]
-[ext_resource type="Texture2D" uid="uid://dpb5qdn2o1wiu" path="res://Assets/Backgrounds/parallax/moon/moon_mid.png" id="4_3hs57"]
+[ext_resource type="Texture2D" uid="uid://dpb5qdn2o1wiu" path="res://Assets/Backgrounds/Moon/moon_mid.png" id="4_3hs57"]
 [ext_resource type="Texture2D" uid="uid://bylmst4sux04n" path="res://Assets/Sprites/Planet/3744016202(2).png" id="4_275hb"]
-[ext_resource type="Texture2D" uid="uid://ov1ady31uaam" path="res://Assets/Backgrounds/parallax/moon/moon_front.png" id="5_p175h"]
-[ext_resource type="Texture2D" uid="uid://6jxego6hcoa0" path="res://Assets/Backgrounds/parallax/moon/moon_floor.png" id="6_1y2qe"]
+[ext_resource type="Texture2D" uid="uid://ov1ady31uaam" path="res://Assets/Backgrounds/Moon/moon_front.png" id="5_p175h"]
+[ext_resource type="Texture2D" uid="uid://6jxego6hcoa0" path="res://Assets/Backgrounds/Moon/moon_floor.png" id="6_1y2qe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bod3h"]
 atlas = ExtResource("4_275hb")

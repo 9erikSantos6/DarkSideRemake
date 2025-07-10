@@ -1,10 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://c0vgq3wpfflww"]
+[gd_scene load_steps=26 format=3 uid="uid://c0vgq3wpfflww"]
 
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/Enemy.gd" id="1_fbjb6"]
-[ext_resource type="Texture2D" uid="uid://be8e7awqpgw0f" path="res://Assets/Backgrounds/Bonus (enemies)/enemy_circle-sheet.png" id="2_50o41"]
-[ext_resource type="Texture2D" uid="uid://jh36f58tyful" path="res://Assets/Backgrounds/Bonus (enemies)/enemy_zig_zag-sheet.png" id="3_264vf"]
-[ext_resource type="Texture2D" uid="uid://bii0als883hrj" path="res://Assets/Backgrounds/Bonus (enemies)/kamikaze-sheet.png" id="4_dkfj3"]
-[ext_resource type="Texture2D" uid="uid://cisicx623t28n" path="res://Assets/Backgrounds/Bonus (enemies)/random_shooter-sheet.png" id="5_lcwny"]
+[ext_resource type="Texture2D" uid="uid://be8e7awqpgw0f" path="res://Assets/Sprites/Enemies/enemy_circle-sheet.png" id="2_50o41"]
+[ext_resource type="Texture2D" uid="uid://jh36f58tyful" path="res://Assets/Sprites/Enemies/enemy_zig_zag-sheet.png" id="3_264vf"]
+[ext_resource type="Texture2D" uid="uid://cisicx623t28n" path="res://Assets/Sprites/Enemies/random_shooter-sheet.png" id="5_lcwny"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(32, 16)
@@ -81,36 +80,36 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5utnl"]
-atlas = ExtResource("4_dkfj3")
-region = Rect2(0, 0, 226, 103)
+[sub_resource type="AtlasTexture" id="AtlasTexture_281wj"]
+atlas = ExtResource("2_50o41")
+region = Rect2(0, 0, 353, 168)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_adv3q"]
-atlas = ExtResource("4_dkfj3")
-region = Rect2(226, 0, 226, 103)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj701"]
+atlas = ExtResource("2_50o41")
+region = Rect2(353, 0, 353, 168)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bln3"]
-atlas = ExtResource("4_dkfj3")
-region = Rect2(452, 0, 226, 103)
+[sub_resource type="AtlasTexture" id="AtlasTexture_s27wk"]
+atlas = ExtResource("2_50o41")
+region = Rect2(706, 0, 353, 168)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8byt"]
-atlas = ExtResource("4_dkfj3")
-region = Rect2(678, 0, 226, 103)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm7cn"]
+atlas = ExtResource("2_50o41")
+region = Rect2(1059, 0, 353, 168)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bknl7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5utnl")
+"texture": SubResource("AtlasTexture_281wj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_adv3q")
+"texture": SubResource("AtlasTexture_mj701")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4bln3")
+"texture": SubResource("AtlasTexture_s27wk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k8byt")
+"texture": SubResource("AtlasTexture_nm7cn")
 }],
 "loop": true,
 "name": &"default",
@@ -155,10 +154,8 @@ animations = [{
 
 [node name="Enemy" type="Area2D" groups=["enemies"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 10
 script = ExtResource("1_fbjb6")
-max_speed = 600.0
-min_speed = 300.0
 
 [node name="enemyCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
@@ -173,7 +170,7 @@ position = Vector2(2.8375, 0)
 scale = Vector2(0.119901, 0.12)
 sprite_frames = SubResource("SpriteFrames_3k4oe")
 autoplay = "default"
-frame_progress = 0.441409
+frame_progress = 0.124467
 speed_scale = 0.3
 
 [node name="sprite_enemy2" type="AnimatedSprite2D" parent="."]
@@ -185,11 +182,11 @@ frame_progress = 0.00247394
 speed_scale = 0.3
 
 [node name="sprite_enemy3" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.5, -1.253)
-scale = Vector2(0.172566, 0.199087)
+position = Vector2(1.5, 0)
+scale = Vector2(0.116147, 0.127976)
 sprite_frames = SubResource("SpriteFrames_bknl7")
 autoplay = "default"
-frame_progress = 0.527477
+frame_progress = 0.151446
 speed_scale = 0.3
 
 [node name="sprite_enemy4" type="AnimatedSprite2D" parent="."]
@@ -200,5 +197,6 @@ autoplay = "default"
 frame_progress = 0.716069
 speed_scale = 0.3
 
-[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

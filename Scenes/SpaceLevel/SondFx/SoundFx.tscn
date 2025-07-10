@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c41owm30w7c7x"]
 
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/SoundFx.gd" id="1"]
-[ext_resource type="AudioStream" uid="uid://d4do25wfx1mk4" path="res://Assets/Sounds/explosion02.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://co0qv55gfo22x" path="res://Assets/Sounds/Fx/explosion02.wav" id="2"]
 
 [node name="SoundFx" type="Node2D"]
 script = ExtResource("1")

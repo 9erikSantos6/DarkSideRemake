@@ -17,10 +17,10 @@ dest_files=["res://.godot/imported/EstrelasProximas.png-88095982b9467b6c1ecf48cb
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

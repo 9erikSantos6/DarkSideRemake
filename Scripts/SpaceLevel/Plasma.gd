@@ -36,7 +36,7 @@ func collide():
 	queue_free()
 
 
-func add_player_parent(player: Area2D):
+func add_player_parent(player: CharacterBody2D):
 	if player and player.is_in_group("player"):
 		parent_index = player.player_index
 		fired = true

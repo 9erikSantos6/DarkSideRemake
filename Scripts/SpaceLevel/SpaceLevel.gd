@@ -11,6 +11,8 @@ var plasma_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Plasma
 var enemy_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Enemy.tscn")
 var hud_scene: PackedScene = preload("res://UI/HUD.tscn")
 
+#var new_enemy: PackedScene = preload("res://Scenes/SpaceLevel/Elements/NewEnemyBody.tscn")
+
 var player_pontuation = 0
 
 var hud_in_game: Variant
@@ -20,8 +22,8 @@ func _ready():
 	instance_nodes()
 	$start_spawn_enemies.start()
 
-	hud_in_game.update_player_integrity(Enums.PlayerType.Player1, 100)
-	hud_in_game.update_player_integrity(Enums.PlayerType.Player2, 100)
+	# hud_in_game.update_player_integrity(Enums.PlayerType.Player1, 100)
+	# hud_in_game.update_player_integrity(Enums.PlayerType.Player2, 100)
 
 
 func _process(_delta: float) -> void:
@@ -31,7 +33,7 @@ func _process(_delta: float) -> void:
 func instance_nodes():
 	Game.instance_node(space_parallax_bg, self)
 	Game.instance_node(player_scene, self)
-	Game.instance_node(player_2_scene, self)
+	#Game.instance_node(player_2_scene, self)ds 
 
 	hud_in_game = Game.instance_node(hud_scene, self)
 
@@ -41,10 +43,19 @@ func randomly_spawn_enemys():
 		var random_amount = floor(clamp(randf() * max_enemies_horde_size + 1, 1, max_enemies_horde_size))
 		for enemy in random_amount:
 			Game.instance_node(enemy_scene, self)
+		#Game.instance_node(new_enemy, self)
 
 func update_hud():
 	hud_in_game.update_score(Game.get_player_stage_score())
 
+	for player in Game.player_nodes:
+		#if player and player.is_in_group("player"):
+		if player:
+			hud_in_game.update_player_integrity(player.player_index, player.integrity)
+		else:
+			hud_in_game.update_player_integrity(player.player_index, 0)
+			#if not player.alive:
+				#hud_in_game.update_player_integrity(player.player_index, 0)
 
 func _exit_tree():
 	queue_free()

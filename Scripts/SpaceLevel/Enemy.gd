@@ -35,7 +35,7 @@ func control_move(delta):
 
 
 func spawn():
-	speed = randf_range(255.0, 500.0)
+	speed = randf_range(min_speed, max_speed)
 	scale = Vector2(5,5)
 	set_sprite()
 	var texture = sprites[0].sprite_frames.get_frame_texture("default", 0)

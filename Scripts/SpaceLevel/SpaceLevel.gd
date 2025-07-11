@@ -11,6 +11,7 @@ var plasma_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Plasma
 var enemy_scene: PackedScene = preload("res://Scenes/SpaceLevel/Elements/Enemy.tscn")
 var hud_scene: PackedScene = preload("res://UI/HUD.tscn")
 var gameover_scene: PackedScene = preload("res://UI/Gameover.tscn")
+var pause_menu_scene: PackedScene = preload("res://UI/PauseMenu.tscn")
 
 #var new_enemy: PackedScene = preload("res://Scenes/SpaceLevel/Elements/NewEnemyBody.tscn")
 
@@ -32,6 +33,7 @@ func _ready():
 func _process(_delta: float) -> void:
 	update_hud()
 	detect_player_game_over()
+	detect_player_pause()
 
 
 func instance_nodes():
@@ -44,7 +46,7 @@ func instance_players():
 	if Game.get_game_mode() == Enums.GameMode.MultiPlayer:
 		Game.instance_node(player_2_scene, self)
 		set_difficulty(Enums.GameDifficulty.DarkSide)
-		
+
 	set_difficulty(Enums.GameDifficulty.DarkSide)
 	Game.instance_node(player_scene, self)
 
@@ -105,6 +107,16 @@ func change_to_gameover():
 	var gameover_screen = gameover_scene.instantiate()
 	get_tree().root.add_child(gameover_screen)
 	queue_free()
+
+
+func detect_player_pause():
+	for player in Game.get_player_nodes():
+		if Input.is_action_pressed("player_%s_start" % str(player.player_index)) and Game.get_game_state() == Enums.GameState.Playing:
+			Game.set_game_state(Enums.GameState.Paused)
+			get_tree().paused = true
+			var pause_menu_screen = pause_menu_scene.instantiate()
+			add_child(pause_menu_screen)
+
 
 
 func clear_children():

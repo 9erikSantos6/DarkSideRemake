@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cpnacakddc55a"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/blur_shaders.gdshader" id="1_0nggq"]
-[ext_resource type="PackedScene" uid="uid://tt304qerlga" path="res://Scenes/ErthLevel/ForestParallax.tscn" id="1_y7dm0"]
+[ext_resource type="Script" path="res://Scripts/UI/PauseMenu.gd" id="1_fhw4n"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="2_qapfa"]
 [ext_resource type="Theme" uid="uid://bxgvpr8vq35ud" path="res://Themes/PauseMenu.tres" id="3_krhsp"]
 
@@ -66,8 +66,8 @@ _data = {
 }
 
 [node name="PauseMenu" type="CanvasLayer"]
-
-[node name="ForestParallax" parent="." instance=ExtResource("1_y7dm0")]
+process_mode = 3
+script = ExtResource("1_fhw4n")
 
 [node name="br_overlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_2yhd4")
@@ -127,6 +127,7 @@ text = "RESUME
 "
 
 [node name="options_btn" type="Button" parent="br_overlay/HBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_krhsp")
 text = "OPTIONS"
@@ -148,3 +149,7 @@ libraries = {
 "": SubResource("AnimationLibrary_w8mn2")
 }
 autoplay = "pause_game"
+
+[connection signal="pressed" from="br_overlay/HBoxContainer/VBoxContainer/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="br_overlay/HBoxContainer/VBoxContainer/gamemenu_btn" to="." method="_on_gamemenu_btn_pressed"]
+[connection signal="pressed" from="br_overlay/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

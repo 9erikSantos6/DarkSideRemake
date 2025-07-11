@@ -15,8 +15,8 @@ func _physics_process(delta):
 
 func spawn():
 	scale = Vector2(0.1, 0.1)
-	if parent_index >= 0 and parent_index < Game.player_nodes.size():
-		fired = Game.player_nodes[parent_index].plasma_fired
+	if parent_index >= 0 and parent_index < Game.get_player_nodes().size():
+		fired = Game.get_player_node(parent_index).plasma_fired
 	else:
 		fired = false
 

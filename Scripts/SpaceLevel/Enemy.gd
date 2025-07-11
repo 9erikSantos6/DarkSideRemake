@@ -8,6 +8,9 @@ extends Area2D
 
 var speed
 
+var explosion_scene = preload("res://Scenes/SpaceLevel/Elements/ExplosionEnemy.tscn")
+
+
 var alive = false
 var sprites
 var screen_size = Game.screen_size
@@ -57,6 +60,11 @@ func die_by_player_plasma():
 	speed = 0
 	sound_fx.play_audio('explosion', global_position)
 	Game.set_player_stage_score(reward_points)
+	
+	var explosion = explosion_scene.instantiate()
+	explosion.global_position = global_position
+	get_parent().add_child(explosion)
+	
 	alive = false
 	queue_free()
 

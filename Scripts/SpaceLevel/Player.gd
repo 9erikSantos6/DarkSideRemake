@@ -60,7 +60,7 @@ func instantiate_plasma(position_plasma: Vector2):
 	plasma.add_player_parent(self)
 	get_parent().add_child(plasma)
 	plasma.scale = Vector2(1, 1)
-	plasma.global_position = position_plasma
+	plasma.global_position = position_plasma + Vector2 (0,4)
 
 
 func detect_collision_with_enemy():

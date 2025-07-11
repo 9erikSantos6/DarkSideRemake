@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5hp23lo7oxk0"]
+
+[ext_resource type="Texture2D" uid="uid://yrpls04rxg8o" path="res://Assets/Sprites/Enemies/explosion-sheet.png" id="1_a0mjy"]
+[ext_resource type="Script" path="res://Scripts/SpaceLevel/ExplosionEnemy.gd" id="1_cch1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe4y4"]
+atlas = ExtResource("1_a0mjy")
+region = Rect2(0, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwikg"]
+atlas = ExtResource("1_a0mjy")
+region = Rect2(400, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbfcp"]
+atlas = ExtResource("1_a0mjy")
+region = Rect2(800, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tho03"]
+atlas = ExtResource("1_a0mjy")
+region = Rect2(1200, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tai1p"]
+atlas = ExtResource("1_a0mjy")
+region = Rect2(1600, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bo58"]
+atlas = ExtResource("1_a0mjy")
+region = Rect2(2000, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2s0k"]
+atlas = ExtResource("1_a0mjy")
+region = Rect2(2400, 0, 400, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xe5fe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe4y4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwikg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbfcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tho03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tai1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bo58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2s0k")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 14.0
+}]
+
+[node name="ExplosionEnemy" type="Node2D"]
+script = ExtResource("1_cch1o")
+
+[node name="explosion" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xe5fe")
+animation = &"explode"
+autoplay = "explode"
+frame = 6
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="explosion" to="." method="_on_explosion_animation_finished"]

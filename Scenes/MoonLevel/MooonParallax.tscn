@@ -788,6 +788,6 @@ autoscroll = Vector2(-1200, 0)
 repeat_times = 3
 
 [node name="TextureRect" type="TextureRect" parent="moon_floor"]
-offset_right = 1900.0
+offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("8_st5jv")

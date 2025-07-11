@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://tt304qerlga"]
+[gd_scene load_steps=8 format=3 uid="uid://tt304qerlga"]
 
 [ext_resource type="Texture2D" uid="uid://dpmo2hef3hd04" path="res://Assets/Backgrounds/Forest/forest_sky.png" id="1_uyo6v"]
 [ext_resource type="Texture2D" uid="uid://8wsociko7k6k" path="res://Assets/Backgrounds/Forest/forest_moon.png" id="2_vtpkc"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cloq5xfcstpjo" path="res://Assets/Backgrounds/Forest/forest_mid.png" id="5_1011g"]
 [ext_resource type="Texture2D" uid="uid://2qq2hlrhypph" path="res://Assets/Backgrounds/Forest/forest_long.png" id="6_e8tjo"]
 [ext_resource type="Texture2D" uid="uid://dus8x02mbem8f" path="res://Assets/Backgrounds/Forest/forest_short.png" id="7_qfgob"]
-[ext_resource type="PackedScene" uid="uid://cpnacakddc55a" path="res://UI/PauseMenu.tscn" id="8_coyr4"]
 
 [node name="ForestParallax" type="Node2D"]
 
@@ -87,5 +86,3 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("7_qfgob")
 expand_mode = 1
-
-[node name="Pause_menu" parent="." instance=ExtResource("8_coyr4")]

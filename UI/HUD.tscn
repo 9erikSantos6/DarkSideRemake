@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://e08m0o11mgsj"]
+[gd_scene load_steps=9 format=3 uid="uid://e08m0o11mgsj"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Hud.gd" id="1_o6sek"]
 [ext_resource type="Texture2D" uid="uid://disqsxs7mv7gx" path="res://Assets/Images/ProgressBar_02/BarV2_ProgressBarBorder.png" id="1_pgpgf"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="2_gynh4"]
+[ext_resource type="Texture2D" uid="uid://dkkifenyh31m7" path="res://Assets/Images/Icons/Icon27.png" id="4_xyk80"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdru2"]
 bg_color = Color(0.6, 0.6, 0.6, 0.227451)
@@ -19,56 +20,81 @@ expand_margin_bottom = 1.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwfkp"]
 bg_color = Color(0.0727324, 0.509716, 0.0541055, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkuco"]
+bg_color = Color(0.6, 0.6, 0.6, 0.227451)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_top = 2.0
+expand_margin_right = 50.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r47o"]
 bg_color = Color(0.6, 0.6, 0.6, 0.227451)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
 border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-expand_margin_left = 5.0
+expand_margin_left = 110.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_o6sek")
 
-[node name="IntegrityContainer" type="VBoxContainer" parent="."]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 460.0
-offset_bottom = 180.0
+[node name="HBoxHud" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -950.0
+offset_top = 20.0
+offset_right = 955.0
+offset_bottom = 116.0
+grow_horizontal = 2
+theme_override_constants/separation = 1000
+
+[node name="IntegrityContainer" type="VBoxContainer" parent="HBoxHud"]
+layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Player1" type="HBoxContainer" parent="IntegrityContainer"]
+[node name="Player1" type="HBoxContainer" parent="HBoxHud/IntegrityContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="IntegrityBar" type="ProgressBar" parent="IntegrityContainer/Player1"]
+[node name="IntegrityBar" type="ProgressBar" parent="HBoxHud/IntegrityContainer/Player1"]
 custom_minimum_size = Vector2(450, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_vdru2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nwfkp")
-value = 50.0
+value = 100.0
 show_percentage = false
 
-[node name="TextureRect" type="TextureRect" parent="IntegrityContainer/Player1/IntegrityBar"]
+[node name="TextureRect1" type="TextureRect" parent="HBoxHud/IntegrityContainer/Player1/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -5.0
-offset_top = -2.0
+offset_top = -3.0
 offset_right = 5.0
-offset_bottom = 3.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_pgpgf")
 
-[node name="Label1" type="Label" parent="IntegrityContainer/Player1/IntegrityBar"]
+[node name="player1" type="Label" parent="HBoxHud/IntegrityContainer/Player1/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -79,22 +105,32 @@ offset_right = 75.0
 offset_bottom = 14.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_gynh4")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 13
 text = "PLAYER 1"
 
-[node name="Player2" type="HBoxContainer" parent="IntegrityContainer"]
+[node name="kill1" type="Label" parent="HBoxHud/IntegrityContainer/Player1"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_gynh4")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_hkuco")
+text = "KILL: "
 
-[node name="IntegrityBar" type="ProgressBar" parent="IntegrityContainer/Player2"]
+[node name="Player2" type="HBoxContainer" parent="HBoxHud/IntegrityContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="IntegrityBar" type="ProgressBar" parent="HBoxHud/IntegrityContainer/Player2"]
 custom_minimum_size = Vector2(450, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_vdru2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nwfkp")
-value = 25.0
+value = 100.0
 show_percentage = false
 
-[node name="Label2" type="Label" parent="IntegrityContainer/Player2/IntegrityBar"]
+[node name="player2" type="Label" parent="HBoxHud/IntegrityContainer/Player2/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -105,10 +141,10 @@ offset_right = 81.0
 offset_bottom = 14.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_gynh4")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 13
 text = "PLAYER 2"
 
-[node name="TextureRect2" type="TextureRect" parent="IntegrityContainer/Player2/IntegrityBar"]
+[node name="TextureRect2" type="TextureRect" parent="HBoxHud/IntegrityContainer/Player2/IntegrityBar"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -116,23 +152,40 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -230.0
-offset_top = -22.0
+offset_top = -23.0
 offset_right = 230.0
-offset_bottom = 23.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_pgpgf")
 
-[node name="Score" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -260.0
-offset_top = 10.0
-offset_right = -9.0
-offset_bottom = 84.0
-grow_horizontal = 0
+[node name="kill2" type="Label" parent="HBoxHud/IntegrityContainer/Player2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_gynh4")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_hkuco")
+text = "KILL:"
+
+[node name="VBoxScore" type="VBoxContainer" parent="HBoxHud"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxScore" type="HBoxContainer" parent="HBoxHud/VBoxScore"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxHud/VBoxScore/HBoxScore"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_xyk80")
+
+[node name="Score" type="Label" parent="HBoxHud/VBoxScore/HBoxScore"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_gynh4")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_5r47o")
-text = "SCORE: 10000"
+text = "SCORE: 100000"

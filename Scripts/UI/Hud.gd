@@ -6,14 +6,14 @@ var player2_integrity_bar
 
 
 func _ready() -> void:
-	player1_integrity_bar = $IntegrityContainer/Player1/IntegrityBar
-	player2_integrity_bar = $IntegrityContainer/Player2/IntegrityBar
+	player1_integrity_bar = $HBoxHud/IntegrityContainer/Player1/IntegrityBar
+	player2_integrity_bar = $HBoxHud/IntegrityContainer/Player2/IntegrityBar
 	update_score(Game.get_player_stage_score())
 
 
 
 func update_score(score: int) -> void:
-	$Score.text = "SCORE: %d" % score
+	$HBoxHud/VBoxScore/HBoxScore/Score.text = "SCORE: %d" % score
 
 
 func update_player_integrity(game_type: Enums.PlayerType, live_value: float) -> void:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ctuywtg2f61yb"]
+[gd_scene load_steps=22 format=3 uid="uid://ctuywtg2f61yb"]
 
 [ext_resource type="AudioStream" uid="uid://cnqerv0uqnfqs" path="res://Assets/Sounds/Fx/plasma_impact.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://b4d42j11wghw6" path="res://Assets/Sounds/Fx/SapaceShipSoundMotor.mp3" id="2_qlehs"]
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/Player.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://cubvxvfbut0xa" path="res://Assets/Sprites/Player/sprite_player_spaceship_exhaust_high.png" id="4_4vije"]
 [ext_resource type="Texture2D" uid="uid://boai1nyqijhns" path="res://Assets/Sprites/Player/sprite_player_spaceship_up_down.png" id="4_sw31o"]
@@ -125,6 +126,7 @@ wait_time = 0.23
 one_shot = true
 
 [node name="ship_engines" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qlehs")
 
 [node name="plasma_shot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2")

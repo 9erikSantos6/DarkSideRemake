@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bxgvpr8vq35ud"]
+
+[ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="1_1kmg6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f5k5"]
+bg_color = Color(1, 1, 1, 0.396078)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo1rj"]
+bg_color = Color(0.6, 0.6, 0.6, 0.188235)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.396078)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_font_size = 30
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
+Button/constants/outline_size = 10
+Button/fonts/font = ExtResource("1_1kmg6")
+Button/styles/hover = SubResource("StyleBoxFlat_4f5k5")
+Button/styles/normal = SubResource("StyleBoxFlat_yo1rj")

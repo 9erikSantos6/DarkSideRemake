@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwb7yxms7npmo"]
+[gd_scene load_steps=3 format=3 uid="uid://n8xcqo05vk30"]
 
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="1_bqtaa"]
-[ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="2_orh0b"]
+[ext_resource type="Theme" uid="uid://holvji6ivfoc" path="res://Themes/GameOver.tres" id="2_vyngb"]
 
 [node name="Gameover" type="CanvasLayer"]
 
@@ -30,15 +30,16 @@ grow_vertical = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/HBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="ColorRect/HBoxContainer2/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 15
+theme_override_colors/font_color = Color(1, 1, 1, 0.984314)
+theme_override_colors/font_outline_color = Color(0.407843, 0, 0.0784314, 0.984314)
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("1_bqtaa")
 theme_override_font_sizes/font_size = 60
 text = "GAME OVER"
@@ -50,34 +51,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -154.0
+offset_left = -190.0
 offset_top = 10.0
-offset_right = 154.0
-offset_bottom = 286.0
+offset_right = 190.0
+offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
 
 [node name="Button" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_orh0b")
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 15
+theme = ExtResource("2_vyngb")
 text = "RETRY GAME"
 
 [node name="gamemenu_btn" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_orh0b")
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 15
+theme = ExtResource("2_vyngb")
 text = "GAME MENU"
 
 [node name="quit_btn" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_orh0b")
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 15
+theme = ExtResource("2_vyngb")
 text = "QUIT GAME"

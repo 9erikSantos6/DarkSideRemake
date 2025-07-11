@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://Assets/Shaders/blur_shaders.gdshader" id="1_0nggq"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="2_qapfa"]
-[ext_resource type="Theme" uid="uid://bkmj4glhuk6vm" path="res://MainMenu.tres" id="3_8pi8g"]
+[ext_resource type="Theme" uid="uid://bxgvpr8vq35ud" path="res://Themes/PauseMenu.tres" id="3_krhsp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2yhd4"]
 shader = ExtResource("1_0nggq")
@@ -79,22 +79,23 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -150.0
-offset_top = 300.0
-offset_right = 150.0
-offset_bottom = 468.0
+offset_left = -185.0
+offset_top = 150.0
+offset_right = 195.0
+offset_bottom = 353.0
 grow_horizontal = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="br_overlay/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 6
 
 [node name="Label" type="Label" parent="br_overlay/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 6
 theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_qapfa")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 72
 text = "PAUSE"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="br_overlay"]
@@ -104,45 +105,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = 10.0
-offset_right = 136.0
-offset_bottom = 390.0
+offset_left = -185.0
+offset_top = -140.0
+offset_right = 195.0
+offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="br_overlay/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
 
 [node name="resume_btn" type="Button" parent="br_overlay/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_8pi8g")
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
+theme = ExtResource("3_krhsp")
 text = "RESUME 
 "
 
 [node name="options_btn" type="Button" parent="br_overlay/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_8pi8g")
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
+theme = ExtResource("3_krhsp")
 text = "OPTIONS"
 
 [node name="gamemenu_btn" type="Button" parent="br_overlay/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource("3_8pi8g")
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
+theme = ExtResource("3_krhsp")
 text = "GAME MENU"
 
 [node name="quit_btn" type="Button" parent="br_overlay/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_8pi8g")
-theme_override_colors/font_outline_color = Color(0, 0.458824, 0.47451, 1)
-theme_override_constants/outline_size = 10
+theme = ExtResource("3_krhsp")
 text = "QUIT GAME
 "
 

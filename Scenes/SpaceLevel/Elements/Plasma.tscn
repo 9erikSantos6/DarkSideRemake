@@ -1,27 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhbwau3m85ffy"]
+[gd_scene load_steps=6 format=3 uid="uid://dhbwau3m85ffy"]
 
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/Plasma.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://wf3h0evb5tbx" path="res://Assets/Sprites/Player/shooting laser-sheet.png" id="3_d7ar7"]
+[ext_resource type="Texture2D" uid="uid://ced00dfiyromm" path="res://Assets/Sprites/Player/plasma_blue.png" id="2_2qwf6"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(172, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgikp"]
-atlas = ExtResource("3_d7ar7")
-region = Rect2(0, 0, 211, 92)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jvcid"]
-atlas = ExtResource("3_d7ar7")
-region = Rect2(211, 0, 211, 92)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l77wo"]
+atlas = ExtResource("2_2qwf6")
+region = Rect2(0, 0, 1024, 1024)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3g2ss"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dgikp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jvcid")
+"texture": SubResource("AtlasTexture_l77wo")
 }],
 "loop": true,
 "name": &"default",
@@ -44,6 +37,8 @@ scale = Vector2(8.6, 1.5)
 
 [node name="PlasmaSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-11.875, 3)
+scale = Vector2(0.217041, 0.25293)
 sprite_frames = SubResource("SpriteFrames_3g2ss")
 frame_progress = 0.490584
 speed_scale = 1.5

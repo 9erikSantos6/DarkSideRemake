@@ -45,7 +45,7 @@ func instance_players():
 		Game.instance_node(player_2_scene, self)
 		set_difficulty(Enums.GameDifficulty.DarkSide)
 		
-	set_difficulty(Enums.GameDifficulty.DarkSide)
+	set_difficulty(Enums.GameDifficulty.Normal)
 	Game.instance_node(player_scene, self)
 
 

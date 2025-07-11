@@ -80,6 +80,7 @@ texture = ExtResource("6_oj4nb")
 flip_h = true
 
 [node name="ParticulasVerticais" type="Parallax2D" parent="."]
+visible = false
 scroll_scale = Vector2(2, 2)
 repeat_size = Vector2(0, 1080)
 autoscroll = Vector2(0, 80)
@@ -92,6 +93,7 @@ offset_bottom = 40.0
 texture = ExtResource("6_oj4nb")
 
 [node name="ParticulasVerticais2" type="Parallax2D" parent="."]
+visible = false
 scroll_scale = Vector2(2, 2)
 repeat_size = Vector2(0, 1080)
 autoscroll = Vector2(0, -80)

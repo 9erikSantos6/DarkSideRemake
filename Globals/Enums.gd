@@ -25,3 +25,15 @@ enum GameMode {
 	SinglePlayer,
 	MultiPlayer
 }
+
+
+enum GameLevels {
+	SpaceLevel
+}
+
+
+enum GameDifficulty {
+	Easy,
+	Normal,
+	DarkSide
+}

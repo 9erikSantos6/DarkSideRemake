@@ -4,7 +4,7 @@ extends Area2D
 @export var min_speed: float = 255.0
 @export var reward_points: int = 2
 @export var punishiment_points: int = 5
-@export var damage_caused: int = 10
+@export var damage_caused: int = 100
 
 var speed
 
@@ -22,6 +22,7 @@ func _ready():
 		$sprite_enemy4
 	]
 	spawn()
+	sound_fx = Game.instance_sound_fx()
 
 
 func _physics_process(delta):
@@ -54,7 +55,6 @@ func set_sprite():
 
 func die_by_player_plasma():
 	speed = 0
-	sound_fx = Game.instace_sound_fx()
 	sound_fx.play_audio('explosion', global_position)
 	Game.set_player_stage_score(reward_points)
 	alive = false
@@ -62,7 +62,6 @@ func die_by_player_plasma():
 
 func die_by_collision():
 	speed = 0
-	sound_fx = Game.instace_sound_fx()
 	sound_fx.play_audio('explosion', global_position)
 	alive = false
 	queue_free()

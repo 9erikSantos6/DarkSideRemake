@@ -22,7 +22,7 @@ func _physics_process(_delta):
 	control_shot()
 
 func spawn():
-	player_index = Game.add_player(self)
+	player_index = Game.add_player_node(self)
 	alive = true
 	plasma_fired = false
 	plasma_loaded = true
@@ -68,6 +68,7 @@ func detect_collision_with_enemy():
 		var collision = get_slide_collision(i)
 		print(collision.get_collider().name)
 
+
 func take_damege(amount):
 	if amount > 0 and amount <= integrity and alive:
 		integrity -= amount
@@ -84,7 +85,7 @@ func die(atomize=false):
 	if atomize:	queue_free()
 
 func _exit_tree():
-	Game.player_nodes[player_index] = null
+	Game.remove_player_node(player_index)
 	alive = false
 	plasma_fired = false
 	plasma_loaded = false

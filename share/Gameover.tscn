@@ -79,7 +79,3 @@ text = "GAME MENU"
 layout_mode = 2
 theme = ExtResource("2_vyngb")
 text = "QUIT GAME"
-
-[connection signal="pressed" from="ColorRect/HBoxContainer/VBoxContainer/retry_btn" to="." method="_on_retry_btn_pressed"]
-[connection signal="pressed" from="ColorRect/HBoxContainer/VBoxContainer/main_menu_btn" to="." method="_on_main_menu_btn_pressed"]
-[connection signal="pressed" from="ColorRect/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

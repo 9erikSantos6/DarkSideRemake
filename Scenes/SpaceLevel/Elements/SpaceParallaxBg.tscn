@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctrusjy8pkvju"]
+[gd_scene load_steps=7 format=3 uid="uid://chv0rh0ibdxg0"]
 
 [ext_resource type="Script" path="res://Scripts/SpaceLevel/SpaceParallaxBg.gd" id="1_ah6y1"]
 [ext_resource type="Texture2D" uid="uid://dx3sfcjwbseyh" path="res://Assets/Backgrounds/SpaceLevel/GalaxiasDistantes.webp" id="2_girtd"]

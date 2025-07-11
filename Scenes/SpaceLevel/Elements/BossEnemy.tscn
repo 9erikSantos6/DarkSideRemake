@@ -1,0 +1,111 @@
+[gd_scene load_steps=25 format=3 uid="uid://c4gdshmt4yupt"]
+
+[ext_resource type="Texture2D" uid="uid://dxsi5ay4qnm22" path="res://Assets/boss/1751994386056.png" id="1_e4o3o"]
+[ext_resource type="Texture2D" uid="uid://bhxpdsq303mq7" path="res://Assets/boss/1751994447241.png" id="2_hob0p"]
+[ext_resource type="Texture2D" uid="uid://bfutastkn4stb" path="res://Assets/boss/1751994576132.png" id="3_jdhex"]
+[ext_resource type="Texture2D" uid="uid://cgrb3qqa2pim5" path="res://Assets/boss/1751994653878.png" id="4_yxmt3"]
+[ext_resource type="Texture2D" uid="uid://davmp767knmo0" path="res://Assets/boss/1751994680085.png" id="5_lh1v2"]
+[ext_resource type="Texture2D" uid="uid://dn26drwcs3fu1" path="res://Assets/boss/1751994745116.png" id="6_j6tty"]
+[ext_resource type="Texture2D" uid="uid://cte2crt7vam3x" path="res://Assets/boss/1751994816696.png" id="7_n2cpu"]
+[ext_resource type="Texture2D" uid="uid://dlgv1gbliwrgi" path="res://Assets/boss/1751994872127.png" id="8_1pw7f"]
+[ext_resource type="Texture2D" uid="uid://bvvugieax5f3t" path="res://Assets/boss/1751994903158.png" id="9_hoglr"]
+[ext_resource type="Texture2D" uid="uid://cbuqdtjypr5ku" path="res://Assets/boss/1751994994214.png" id="10_pfhwi"]
+[ext_resource type="Texture2D" uid="uid://cw5x3gp6ql51l" path="res://Assets/boss/1751995033467.png" id="11_lhcgw"]
+[ext_resource type="Texture2D" uid="uid://d1fdqshjgrcq3" path="res://Assets/boss/1751995192568.png" id="12_scdu0"]
+[ext_resource type="Texture2D" uid="uid://cxexkwfpa47x7" path="res://Assets/boss/1751995424953.png" id="13_28g3q"]
+[ext_resource type="Texture2D" uid="uid://bmrumft7fxm6h" path="res://Assets/boss/1751995477632.png" id="14_b2fdf"]
+[ext_resource type="Texture2D" uid="uid://bg1a8v8bm5ds0" path="res://Assets/boss/1751995551608.png" id="15_hb1c8"]
+[ext_resource type="Texture2D" uid="uid://6bd5uty1c7bq" path="res://Assets/boss/1751995603621.png" id="16_ri16o"]
+[ext_resource type="Texture2D" uid="uid://d3id80r6v0h0x" path="res://Assets/boss/1751995739819.png" id="17_pqlmu"]
+[ext_resource type="Texture2D" uid="uid://dugymn74lkwfi" path="res://Assets/boss/1751995778039.png" id="18_7rnb1"]
+[ext_resource type="Texture2D" uid="uid://bu4aivcgjlipy" path="res://Assets/boss/1751996028618.png" id="19_jsc25"]
+[ext_resource type="Texture2D" uid="uid://b3fevqau13rwk" path="res://Assets/boss/1751996109464.png" id="21_lo1vc"]
+[ext_resource type="Texture2D" uid="uid://cpasisihydbnx" path="res://Assets/boss/1751996155479.png" id="22_q5d15"]
+[ext_resource type="Texture2D" uid="uid://cm87c2f6i3u0f" path="res://Assets/boss/1751996192841.png" id="23_abjcs"]
+[ext_resource type="Texture2D" uid="uid://bmmbddmp8dp0i" path="res://Assets/boss/1751996228355.png" id="24_a4ul5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlixb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e4o3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hob0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jdhex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yxmt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lh1v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j6tty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n2cpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1pw7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hoglr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pfhwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lhcgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_scdu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_28g3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b2fdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hb1c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ri16o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pqlmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7rnb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jsc25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lo1vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q5d15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_abjcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_a4ul5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BossEnemy" type="Node2D"]
+
+[node name="boss" type="AnimatedSprite2D" parent="."]
+position = Vector2(1608, 517)
+scale = Vector2(1.28235, 1.28235)
+sprite_frames = SubResource("SpriteFrames_hlixb")
+autoplay = "default"
+frame_progress = 0.794019

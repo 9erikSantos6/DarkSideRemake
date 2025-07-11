@@ -127,6 +127,7 @@ one_shot = true
 
 [node name="ship_engines" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qlehs")
+volume_db = -3.0
 autoplay = true
 parameters/looping = true
 

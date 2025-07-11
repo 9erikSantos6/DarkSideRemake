@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpnacakddc55a"]
+[gd_scene load_steps=10 format=3 uid="uid://cpnacakddc55a"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/blur_shaders.gdshader" id="1_0nggq"]
+[ext_resource type="PackedScene" uid="uid://tt304qerlga" path="res://Scenes/ErthLevel/ForestParallax.tscn" id="1_y7dm0"]
 [ext_resource type="FontFile" uid="uid://b473e647e0sd3" path="res://Assets/Fonts/Pixeled.ttf" id="2_qapfa"]
 [ext_resource type="Theme" uid="uid://bxgvpr8vq35ud" path="res://Themes/PauseMenu.tres" id="3_krhsp"]
 
@@ -65,6 +66,8 @@ _data = {
 }
 
 [node name="PauseMenu" type="CanvasLayer"]
+
+[node name="ForestParallax" parent="." instance=ExtResource("1_y7dm0")]
 
 [node name="br_overlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_2yhd4")
@@ -144,3 +147,4 @@ text = "QUIT GAME
 libraries = {
 "": SubResource("AnimationLibrary_w8mn2")
 }
+autoplay = "pause_game"

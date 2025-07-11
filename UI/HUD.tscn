@@ -46,9 +46,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-expand_margin_left = 110.0
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
+expand_margin_left = 5.0
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_o6sek")
@@ -59,10 +57,10 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -950.0
 offset_top = 20.0
-offset_right = 955.0
+offset_right = 950.0
 offset_bottom = 116.0
 grow_horizontal = 2
-theme_override_constants/separation = 1000
+theme_override_constants/separation = 1100
 
 [node name="IntegrityContainer" type="VBoxContainer" parent="HBoxHud"]
 layout_mode = 2
@@ -171,13 +169,14 @@ text = "KILL:"
 [node name="VBoxScore" type="VBoxContainer" parent="HBoxHud"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="HBoxScore" type="HBoxContainer" parent="HBoxHud/VBoxScore"]
 layout_mode = 2
-size_flags_vertical = 6
-theme_override_constants/separation = 10
+size_flags_vertical = 4
 
 [node name="TextureRect3" type="TextureRect" parent="HBoxHud/VBoxScore/HBoxScore"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("4_xyk80")
@@ -185,7 +184,9 @@ texture = ExtResource("4_xyk80")
 [node name="Score" type="Label" parent="HBoxHud/VBoxScore/HBoxScore"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_gynh4")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_5r47o")
-text = "SCORE: 100000"
+text = "SCORE: 100000
+"

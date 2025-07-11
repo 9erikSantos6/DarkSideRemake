@@ -47,6 +47,8 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 expand_margin_left = 5.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_o6sek")

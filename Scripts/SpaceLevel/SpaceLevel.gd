@@ -68,7 +68,7 @@ func set_difficulty(difficulty: Enums.GameDifficulty):
 		2:  # Difícil
 			enemies_spawn_interval = 0.4
 			spawn_enemies_probability = 0.9
-			max_enemies_horde_size = 6
+			max_enemies_horde_size = 8
 
 		_:  # Caso padrão (se vier um valor inesperado)
 			enemies_spawn_interval = 1.0
@@ -90,6 +90,7 @@ func update_hud():
 		for player in Game.get_player_nodes():
 			if player and player.is_in_group("player"):
 				hud_in_game.update_player_integrity(player.player_index, player.integrity)
+				hud_in_game.update_player_kills(player.player_index, player.player_kills)
 
 
 func detect_player_game_over():

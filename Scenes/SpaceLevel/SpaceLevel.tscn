@@ -6,7 +6,7 @@
 script = ExtResource("1_dqdr7")
 
 [node name="start_spawn_enemies" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.3
 one_shot = true
 
 [node name="enemies_spawn_timer" type="Timer" parent="."]

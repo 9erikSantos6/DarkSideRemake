@@ -10,6 +10,7 @@ var alive: bool = false
 var plasma_fired: bool = false
 var plasma_loaded: bool = false
 var integrity: int = 100
+var player_kills: int
 
 var sound
 
@@ -74,6 +75,9 @@ func take_damege(amount):
 		integrity -= amount
 		if integrity <= 0:
 			die()
+
+func add_kill(num: int):
+	player_kills += num
 
 func die(atomize=false):
 	alive = false

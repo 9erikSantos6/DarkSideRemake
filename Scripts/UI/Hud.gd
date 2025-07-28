@@ -22,6 +22,13 @@ func update_player_integrity(player_type: Enums.PlayerType, life_value: float) -
 		player1_integrity_bar.value = life_value
 	elif player_type == Enums.PlayerType.Player2:
 		player2_integrity_bar.value = life_value
+		
+
+func update_player_kills(player_type: Enums.PlayerType, kills_values: float) -> void:
+	if player_type == Enums.PlayerType.Player1:
+		$HBoxHud/IntegrityContainer/Player1/kill1.text = "KILLS: %s" % str(kills_values)
+	elif player_type == Enums.PlayerType.Player2:
+		$HBoxHud/IntegrityContainer/Player2/kill2.text = "KILLS: %s" % str(kills_values)
 
 
 func set_visibility():

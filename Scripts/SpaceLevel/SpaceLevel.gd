@@ -43,14 +43,13 @@ func instance_nodes():
 	hud_in_game = Game.instance_node(hud_scene, self)
 
 func instance_players():
+	set_difficulty(Enums.GameDifficulty.Normal)
+	Game.instance_node(player_scene, self)
+
 	if Game.get_game_mode() == Enums.GameMode.MultiPlayer:
 		Game.instance_node(player_2_scene, self)
 		set_difficulty(Enums.GameDifficulty.DarkSide)
 
-	set_difficulty(Enums.GameDifficulty.DarkSide)
-
-	set_difficulty(Enums.GameDifficulty.Normal)
-	Game.instance_node(player_scene, self)
 
 
 func set_difficulty(difficulty: Enums.GameDifficulty):
@@ -61,7 +60,7 @@ func set_difficulty(difficulty: Enums.GameDifficulty):
 			max_enemies_horde_size = 2
 
 		1:  # Médio
-			enemies_spawn_interval = 0.7
+			enemies_spawn_interval = 0.9
 			spawn_enemies_probability = 0.7
 			max_enemies_horde_size = 4
 

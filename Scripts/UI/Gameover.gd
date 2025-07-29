@@ -18,6 +18,8 @@ func _on_main_menu_btn_pressed() -> void:
 	#get_tree().root.add_child()
 	#queue_free()
 	#get_tree().change_scene_to_packed(main_menu_scene)
+	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
+	queue_free()
 	pass
 	
 func _on_quit_btn_pressed() -> void:

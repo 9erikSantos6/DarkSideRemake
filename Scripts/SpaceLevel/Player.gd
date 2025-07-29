@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 var screen_size: Vector2
 var plasma_scene = preload("res://Scenes/SpaceLevel/Elements/Plasma.tscn")
+var player_indicator_scneme = preload("res://Prefabs/Player/PlayerIndicator.tscn")
 
 var player_index: int
 var alive: bool = false
@@ -29,6 +30,21 @@ func spawn():
 	plasma_loaded = true
 
 	global_position = Vector2(0.14 * screen_size.x, 0.5 * screen_size.y)
+	show_player_indicator()
+
+func show_player_indicator():
+	if Game.get_game_mode() == Enums.GameMode.MultiPlayer:
+		var indicator_instance = player_indicator_scneme.instantiate()
+
+		if player_index == Enums.PlayerType.Player1:
+			indicator_instance.set_player_indicator(Enums.PlayerType.Player1)
+
+		else:
+			indicator_instance.set_player_indicator(Enums.PlayerType.Player2)
+
+		add_child(indicator_instance)
+		indicator_instance.global_position = global_position + Vector2(0, -60)
+		indicator_instance.play()
 
 
 func control_player():

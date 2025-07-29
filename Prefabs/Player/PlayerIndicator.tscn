@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://boiluy6j03yty"]
+
+[ext_resource type="Texture2D" uid="uid://b05bqc7lxj6q5" path="res://Assets/Sprites/Player/player_indicator.png" id="1_1d0an"]
+[ext_resource type="Script" path="res://Scripts/Prefabs/PlayerIndicator.gd" id="2_owqbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw780"]
+atlas = ExtResource("1_1d0an")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivl3b"]
+atlas = ExtResource("1_1d0an")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grlo2"]
+atlas = ExtResource("1_1d0an")
+region = Rect2(0, 10, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xryf"]
+atlas = ExtResource("1_1d0an")
+region = Rect2(10, 10, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rxvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw780")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivl3b")
+}],
+"loop": true,
+"name": &"0",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grlo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xryf")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}]
+
+[node name="PlayerIndicator" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_2rxvw")
+animation = &"0"
+frame_progress = 0.464921
+script = ExtResource("2_owqbh")

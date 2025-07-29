@@ -110,7 +110,7 @@ func change_to_gameover():
 
 func detect_player_pause():
 	for player in Game.get_player_nodes():
-		if Input.is_action_pressed("player_%s_start" % str(player.player_index)) and Game.get_game_state() == Enums.GameState.Playing:
+		if Input.is_action_pressed("player_start") and Game.get_game_state() == Enums.GameState.Playing:
 			Game.set_game_state(Enums.GameState.Paused)
 			get_tree().paused = true
 			var pause_menu_screen = pause_menu_scene.instantiate()

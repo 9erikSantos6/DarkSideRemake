@@ -69,7 +69,7 @@ text = "START"
 [node name="muilt_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_j7ysw")
-text = "MUITIPLAYER"
+text = "MULTIPLAYER"
 
 [node name="quit_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2

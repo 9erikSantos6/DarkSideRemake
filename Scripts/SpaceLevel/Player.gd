@@ -70,7 +70,7 @@ func detect_collision_with_enemy():
 		print(collision.get_collider().name)
 
 
-func take_damege(amount):
+func take_damage(amount):
 	if amount > 0 and amount <= integrity and alive:
 		integrity -= amount
 		if integrity <= 0:

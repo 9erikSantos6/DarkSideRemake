@@ -26,9 +26,6 @@ func _ready():
 	instance_nodes()
 	$start_spawn_enemies.start()
 
-	# hud_in_game.update_player_integrity(Enums.PlayerType.Player1, 100)
-	# hud_in_game.update_player_integrity(Enums.PlayerType.Player2, 100)
-
 
 func _process(_delta: float) -> void:
 	update_hud()

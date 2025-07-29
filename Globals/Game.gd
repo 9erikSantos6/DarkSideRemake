@@ -34,7 +34,7 @@ func add_player_node(layer: CharacterBody2D) -> int:
 		return -1
 	_player_nodes.append(layer)
 	return _player_nodes.size() - 1
-	
+
 func add_player_kill(index_player: int, num: int):
 	_player_nodes[index_player].add_kill(num)
 
